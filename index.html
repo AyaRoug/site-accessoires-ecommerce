@@ -1,11 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jewlery</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zina - Bracelets</title>
+
+  <!-- Google Fonts - doit être AVANT le style -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+  <style>
+
+  /* ============================================
+     HEADER - barre de navigation principale
+     contient le logo à gauche et le menu à droite
+  ============================================ */
+
+  header {
+    background-color: #F5F0E8; /* couleur beige crème inspirée du moodboard */
+    display: flex;              /* met les éléments en ligne (logo + nav) */
+    justify-content: space-between; /* logo à gauche, nav à droite */
+    align-items: center;        /* centre verticalement logo et nav */
+    padding: 20px 60px;         /* espace intérieur : 20px haut/bas, 60px gauche/droite */
+    gap: 60px;                  /* espace entre le logo et le nav */
+  }
+
+  /* ============================================
+     LOGO - le nom "Zina" affiché à gauche
+  ============================================ */
+
+  .logo h1 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 36px;
+  letter-spacing: 5px;
+}
+
+  /* ============================================
+     NAV - conteneur des liens de navigation
+  ============================================ */
+
+  nav ul {
+    list-style: none;  /* supprime les puces de la liste */
+    display: flex;     /* met les liens côte à côte (horizontal) */
+    gap: 40px;         /* espace entre chaque lien */
+    margin: 0;         /* supprime la marge par défaut du ul */
+    padding: 0;        /* supprime le padding par défaut du ul */
+  }
+
+  /* ============================================
+     LIENS - style de chaque lien du menu
+  ============================================ */
+
+  nav ul li a {
+    text-decoration: none;      /* supprime le soulignement par défaut */
+    color: #5C3D2E;             /* même brun que le logo */
+    font-size: 14px;            /* taille du texte des liens */
+    letter-spacing: 2px;        /* légèrement espacé pour un look raffiné */
+    text-transform: uppercase;  /* met les lettres en majuscules */
+  }
+
+  /* ============================================
+     HOVER - effet quand on passe la souris sur un lien
+  ============================================ */
+
+  nav ul li a:hover {
+    color: #C4A882; /* couleur dorée/caramel au survol */
+  }
+
+  /* ============================================
+     ACTIVE - style du lien de la page actuelle
+     (ici la page Bracelets sera soulignée)
+  ============================================ */
+
+  nav ul li a.active {
+    border-bottom: 2px solid #5C3D2E; /* ligne sous le lien actif */
+  }
+
+  </style>
 </head>
+
 <body>
-    
+
+  <header>
+    <div class="logo">
+      <h1>Zina</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="bracelets.html" class="active">Bracelets</a></li>
+        <li><a href="sets.html">Sets</a></li>
+        <li><a href="mdamma.html">Mdamma & Chmar</a></li>
+        <li><a href="rings.html">Rings & Earrings</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+  </main>
+
+  <footer>
+  </footer>
+
 </body>
 </html>
