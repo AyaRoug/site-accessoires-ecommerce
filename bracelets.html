@@ -97,19 +97,11 @@
   display: flex;
   height: 500px;
   overflow: hidden;
-  border: 8px solid #F5F0E8;    /* cadre beige autour du hero */
-  outline: 2px solid #C4A882;   /* ligne dorée autour du cadre */
-  margin: 20px 60px;            /* espace autour du hero */
-  gap: 4px;                     /* petit espace doré entre les images */
-  background-color: #C4A882;    /* la couleur dorée remplit le gap */
-}
-
-/* ============================================
-   HERO - 3 images côte à côte
-============================================ */
-.hero {
-  display: flex;        /* met les images en ligne */
-  height: 500px;        /* hauteur du hero */
+  border: 8px solid #F5F0E8;
+  outline: 2px solid #C4A882;
+  margin: 20px 60px;
+  gap: 4px;
+  background-color: #C4A882;
 }
 
 /* ============================================
@@ -166,6 +158,46 @@
   color: #C4A882;
   font-size: 18px;
 }
+/* ============================================
+   CITATION - sous les images hero
+============================================ */
+.citation {
+  display: flex;            /* met tout en ligne */
+  align-items: center;      /* centre verticalement */
+  justify-content: center;  /* centre horizontalement */
+  gap: 16px;                /* espace entre les éléments */
+  padding: 40px 60px;       /* espace autour */
+  background-color: #F5F0E8; /* même beige que le header */
+}
+
+/* ============================================
+   TEXTE DE LA CITATION
+============================================ */
+.citation-texte {
+  font-family: 'Amiri', serif; /* même police que le logo */
+  font-size: 22px;
+  color: #5C3D2E;              /* brun noyer */
+  font-style: italic;          /* italique pour l'élégance */
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+/* ============================================
+   ORNEMENTS - les ✦ décoratifs
+============================================ */
+.citation-ornement {
+  color: #C4A882;   /* doré */
+  font-size: 16px;
+}
+
+/* ============================================
+   LIGNES - les —— de chaque côté
+============================================ */
+.citation-ligne {
+  color: #C4A882;   /* doré */
+  font-size: 20px;
+  letter-spacing: -4px; /* resserre les tirets */
+}
 
   </style>
 </head>
@@ -187,7 +219,6 @@
     </nav>
   </header>
 
-  <!-- dans ton <main> -->
 <main>
 
   <!-- ============================================
@@ -199,7 +230,16 @@
   <img src="Rafinity.jpg" alt="Bracelet émeraude">
   <img src="amazigh.jpg" alt="Bracelet coloré">
 </section>
-
+ <!-- ============================================
+     CITATION - sous les images du hero
+============================================ -->
+    <div class="citation">
+    <span class="citation-ligne">——</span>
+    <span class="citation-ornement">✦</span>
+    <p class="citation-texte">"Every piece tells a story of Moroccan heritage"</p>
+    <span class="citation-ornement">✦</span>
+    <span class="citation-ligne">——</span>
+    </div>
 </main>
   <footer>
   </footer>
