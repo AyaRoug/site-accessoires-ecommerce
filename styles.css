@@ -1,0 +1,192 @@
+  /* ============================================
+     HEADER - barre de navigation principale
+     contient le logo à gauche et le menu à droite
+  ============================================ */
+  body{
+    background-color: #ad8e5e;
+  }
+
+  header {
+    background-color: #F5F0E8; /* couleur beige crème inspirée du moodboard */
+    display: flex;              /* met les éléments en ligne (logo + nav) */
+    justify-content: space-between; /* logo à gauche, nav à droite */
+    align-items: center;        /* centre verticalement logo et nav */
+    padding: 20px 60px;         /* espace intérieur : 20px haut/bas, 60px gauche/droite */
+    gap: 60px;                  /* espace entre le logo et le nav */
+  }
+
+  /* ============================================
+     LOGO - le nom "Zina" affiché à gauche
+  ============================================ */
+
+  .logo h1 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 36px;
+  letter-spacing: 5px;
+}
+
+  /* ============================================
+     NAV - conteneur des liens de navigation
+  ============================================ */
+
+  nav ul {
+    list-style: none;  /* supprime les puces de la liste */
+    display: flex;     /* met les liens côte à côte (horizontal) */
+    gap: 40px;         /* espace entre chaque lien */
+    margin: 0;         /* supprime la marge par défaut du ul */
+    padding: 0;        /* supprime le padding par défaut du ul */
+  }
+
+  /* ============================================
+     LIENS - style de chaque lien du menu
+  ============================================ */
+
+  nav ul li a {
+    text-decoration: none;      /* supprime le soulignement par défaut */
+    color: #5C3D2E;             /* même brun que le logo */
+    font-size: 14px;            /* taille du texte des liens */
+    letter-spacing: 2px;        /* légèrement espacé pour un look raffiné */
+    text-transform: uppercase;  /* met les lettres en majuscules */
+  }
+
+  /* ============================================
+     HOVER - effet quand on passe la souris sur un lien
+  ============================================ */
+
+  nav ul li a:hover {
+    color: #C4A882; /* couleur dorée/caramel au survol */
+  }
+
+  /* ============================================
+     ACTIVE - style du lien de la page actuelle
+     (ici la page Bracelets sera soulignée)
+  ============================================ */
+
+  nav ul li a.active {
+    border-bottom: 2px solid #5C3D2E; /* ligne sous le lien actif */
+  }
+
+
+  /* Conteneur des icônes */
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espace entre chaque icône */
+}
+
+/* Style de base des SVG */
+.header_nav-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s ease, color 0.2s ease;
+    cursor: pointer;
+    color: #333; /* Change la couleur selon ton design */
+}
+
+/* Effet au survol */
+.header_nav-icon:hover {
+    transform: scale(1.1);
+    color: #000; /* Couleur plus foncée au survol */
+}
+
+/* Supprime le soulignement des liens autour des icônes */
+.icon-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+
+.principal-earring {
+    display: flex;  
+    width: 100%;
+    height: 55vh;
+    margin: 0%;
+    padding: 0%;
+}
+
+.principal-earring img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 20% 40%;
+}
+
+
+
+.card {
+    padding: 20px;
+    text-align: center;
+    background-color: white; /* Fond blanc pour détacher du beige */
+}
+
+.card h3 {
+    font-family: 'Playfair Display', serif; /* Police de luxe */
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card .description {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.card .price {
+    font-weight: bold;
+    color: #d4af37; /* Couleur dorée */
+    font-size: 1.1rem;
+}
+
+
+
+
+
+
+
+
+
+
+/* ============================================
+   CITATION - sous les images hero
+============================================ */
+.citation {
+  display: flex;            /* met tout en ligne */
+  align-items: center;      /* centre verticalement */
+  justify-content: center;  /* centre horizontalement */
+  gap: 16px;                /* espace entre les éléments */
+  padding: 40px 60px;       /* espace autour */
+  background-color: #F5F0E8; /* même beige que le header */
+}
+
+/* ============================================
+   TEXTE DE LA CITATION
+============================================ */
+.citation-texte {
+  font-family: 'Amiri', serif; /* même police que le logo */
+  font-size: 22px;
+  color: #5C3D2E;              /* brun noyer */
+  font-style: italic;          /* italique pour l'élégance */
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+/* ============================================
+   ORNEMENTS - les ✦ décoratifs
+============================================ */
+.citation-ornement {
+  color: #C4A882;   /* doré */
+  font-size: 16px;
+}
+
+/* ============================================
+   LIGNES - les —— de chaque côté
+============================================ */
+.citation-ligne {
+  color: #C4A882;   /* doré */
+  font-size: 20px;
+  letter-spacing: -4px; /* resserre les tirets */
+}
