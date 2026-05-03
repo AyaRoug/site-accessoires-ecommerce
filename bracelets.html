@@ -16,6 +16,7 @@
   ============================================ -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Amiri&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="JSShared.js"></script>
 </head>
 
 <body>
@@ -339,89 +340,6 @@
   <div class="notification" id="notification">
     <span>✦ Ajouté au panier avec succès ✦</span>
   </div>
-
-  <!-- ============================================
-       JAVASCRIPT - toute la logique du site
-  ============================================ -->
-  <script>
-
-    /* ============================================
-       ouvrirModal() - appelée au clic sur une carte
-       reçoit 5 paramètres :
-       - image : nom du fichier image
-       - nom : nom du bracelet
-       - prix : prix en MAD
-       - description : texte descriptif
-       - matiere : matière du bracelet
-    ============================================ */
-    function ouvrirModal(image, nom, prix, description, matiere) {
-
-      /* remplace le src de l'image par le chemin complet */
-      document.getElementById('modal-img').src = image;
-
-      /* remplace le texte de chaque élément */
-      document.getElementById('modal-nom').textContent = nom;
-      document.getElementById('modal-prix').textContent = prix;
-      document.getElementById('modal-desc').textContent = description;
-      document.getElementById('modal-matiere').textContent = 'Matière : ' + matiere;
-
-      /* ajoute la classe "actif" pour afficher le modal */
-      document.getElementById('modal').classList.add('actif');
-    }
-
-    /* ============================================
-       fermerModal() - ferme le modal
-       supprime la classe "actif" pour cacher le modal
-    ============================================ */
-    function fermerModal() {
-      document.getElementById('modal').classList.remove('actif');
-    }
-
-    /* ============================================
-       afficherNotification() - affiche la notification
-       pendant 3 secondes puis la cache automatiquement
-    ============================================ */
-    function afficherNotification() {
-      const notif = document.getElementById('notification');
-
-      /* affiche la notification */
-      notif.classList.add('visible');
-
-      /* cache automatiquement après 3 secondes */
-      setTimeout(function() {
-        notif.classList.remove('visible');
-      }, 3000); /* 3000 millisecondes = 3 secondes */
-    }
-
-    /* ============================================
-       allerEnHaut() - remonte en haut de la page
-       behavior:'smooth' = défilement doux
-    ============================================ */
-    function allerEnHaut() {
-      window.scrollTo({
-        top: 0,            /* aller tout en haut */
-        behavior: 'smooth' /* défilement doux */
-      });
-    }
-
-    /* ============================================
-       DETECTER LE SCROLL
-       affiche le bouton ↑ quand on descend de 300px
-       window.scrollY = position actuelle du scroll
-    ============================================ */
-    window.addEventListener('scroll', function() {
-      const bouton = document.getElementById('scrollTop');
-
-      if (window.scrollY > 300) {
-        /* on a scrollé plus de 300px = affiche le bouton */
-        bouton.classList.add('visible');
-      } else {
-        /* on est en haut = cache le bouton */
-        bouton.classList.remove('visible');
-      }
-    });
-
-  </script>
 
 </body>
 </html>
