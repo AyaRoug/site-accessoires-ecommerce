@@ -15,699 +15,8 @@
        doit être AVANT le style pour que les polices soient disponibles
   ============================================ -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Amiri&display=swap" rel="stylesheet">
-
-<<<<<<< HEAD
-  <style>
-
-  /* ============================================
-     RESET GLOBAL
-     supprime les marges et paddings par défaut
-     de tous les navigateurs
-  ============================================ */
-  * {
-    box-sizing: border-box; /* taille des éléments plus logique */
-    margin: 0;
-    padding: 0;
-  }
-
-  /* ============================================
-     BODY - style global de la page
-  ============================================ */
-  body {
-    font-family: 'Amiri', serif;
-    background-color: #FDFAF5; /* blanc légèrement beige */
-  }
-
-  /* ============================================
-     HEADER - barre de navigation principale
-     display:flex met le logo à gauche et le nav à droite
-     sur la même ligne horizontale
-  ============================================ */
-  header {
-    background-color: #F5F0E8; /* beige crème inspiré du moodboard */
-    display: flex;              /* aligne les enfants en ligne */
-    justify-content: space-between; /* logo à gauche, nav à droite */
-    align-items: center;        /* centre verticalement logo et nav */
-    padding: 20px 60px;         /* 20px haut/bas, 60px gauche/droite */
-    gap: 60px;                  /* espace minimum entre logo et nav */
-  }
-
-  /* ============================================
-     LOGO - le nom "Zina" en haut à gauche
-     Playfair Display italic donne un look luxe et classique
-  ============================================ */
-  .logo h1 {
-    font-family: 'Playfair Display', serif; /* police luxe avec empattements */
-    font-style: italic;                     /* italique pour l'élégance */
-    font-size: 36px;
-    letter-spacing: 5px;  /* espace entre les lettres */
-    color: #5C3D2E;       /* brun noyer - couleur principale du site */
-    margin: 0;            /* supprime la marge par défaut du h1 */
-  }
-
-  /* ============================================
-     NAV - liste des liens de navigation
-     display:flex transforme la liste verticale en ligne horizontale
-  ============================================ */
-  nav ul {
-    list-style: none; /* supprime les puces de la liste */
-    display: flex;    /* met les liens côte à côte */
-    gap: 40px;        /* espace entre chaque lien */
-    margin: 0;
-    padding: 0;
-  }
-
-  /* ============================================
-     LIENS DE NAVIGATION - style de chaque lien
-  ============================================ */
-  nav ul li a {
-    text-decoration: none;     /* supprime le soulignement par défaut */
-    color: #5C3D2E;            /* brun noyer comme le logo */
-    font-size: 14px;
-    letter-spacing: 2px;       /* légèrement espacé pour un look raffiné */
-    text-transform: uppercase; /* met les lettres en majuscules */
-  }
-
-  /* ============================================
-     HOVER NAV - effet au survol d'un lien
-     :hover s'active quand la souris est sur l'élément
-  ============================================ */
-  nav ul li a:hover {
-    color: #C4A882; /* devient doré/caramel au survol */
-  }
-
-  /* ============================================
-     ACTIVE NAV - style du lien de la page actuelle
-     la classe "active" est ajoutée manuellement en HTML
-     sur le lien correspondant à la page ouverte
-  ============================================ */
-  nav ul li a.active {
-    border-bottom: 2px solid #5C3D2E; /* ligne sous le lien actif */
-  }
-
-  /* ============================================
-     HERO - section des 3 images en haut de page
-     display:flex met les 3 images côte à côte
-     overflow:hidden cache ce qui dépasse (utile pour le zoom)
-  ============================================ */
-  .hero {
-    display: flex;             /* images côte à côte */
-    height: 500px;             /* hauteur fixe du hero */
-    overflow: hidden;          /* cache ce qui dépasse lors du zoom */
-    border: 8px solid #F5F0E8; /* cadre beige autour des images */
-    outline: 2px solid #C4A882;/* deuxième cadre doré à l'extérieur */
-    margin: 20px 60px;         /* espace autour du hero */
-    gap: 4px;                  /* petit espace entre les images */
-    background-color: #C4A882; /* le gap prend la couleur dorée */
-  }
-
-  /* ============================================
-     IMAGES DU HERO - chaque image individuellement
-     object-fit:cover recadre sans déformer
-  ============================================ */
-  .hero img {
-    width: 33.33%;        /* chaque image prend 1/3 de la largeur */
-    height: 100%;         /* prend toute la hauteur du hero */
-    object-fit: cover;    /* recadre l'image sans la déformer */
-    filter: brightness(0.85); /* légèrement assombrie par défaut */
-    transition: transform 0.5s ease, filter 0.5s ease; /* animation douce */
-  }
-
-  /* ============================================
-     HOVER IMAGES HERO - effet au survol
-     scale(1.05) = zoom de 5%
-     brightness(1.1) = légèrement plus lumineuse
-  ============================================ */
-  .hero img:hover {
-    transform: scale(1.05);  /* zoom léger */
-    filter: brightness(1.1); /* s'éclaircit */
-  }
-
-  /* ============================================
-     CITATION - bande de texte sous le hero
-     display:flex centre tout horizontalement
-  ============================================ */
-  .citation {
-    display: flex;
-    align-items: center;      /* centre verticalement */
-    justify-content: center;  /* centre horizontalement */
-    gap: 16px;                /* espace entre ornements et texte */
-    padding: 40px 60px;
-    background-color: #F5F0E8; /* même beige que le header */
-  }
-
-  /* ============================================
-     TEXTE DE LA CITATION
-     Amiri italic donne un aspect calligraphique élégant
-  ============================================ */
-  .citation-texte {
-    font-family: 'Amiri', serif; /* police arabesque */
-    font-size: 22px;
-    color: #5C3D2E;
-    font-style: italic;
-    letter-spacing: 2px;
-    margin: 0;
-  }
-
-  /* ============================================
-     ORNEMENTS ✦ - les étoiles décoratives
-  ============================================ */
-  .citation-ornement {
-    color: #C4A882; /* doré */
-    font-size: 16px;
-  }
-
-  /* ============================================
-     LIGNES —— - les tirets de chaque côté
-     letter-spacing négatif resserre les tirets
-  ============================================ */
-  .citation-ligne {
-    color: #C4A882;
-    font-size: 20px;
-    letter-spacing: -4px; /* resserre les tirets pour former une ligne */
-  }
-
-  /* ============================================
-     BANDE DÉFILANTE - texte qui bouge automatiquement
-     overflow:hidden cache le texte qui sort du conteneur
-     white-space:nowrap empêche le texte de passer à la ligne
-  ============================================ */
-  .bande {
-    background-color: #5C3D2E; /* fond brun noyer */
-    padding: 14px 0;
-    overflow: hidden;           /* cache ce qui dépasse à gauche/droite */
-    white-space: nowrap;        /* garde tout sur une seule ligne */
-  }
-
-  /* ============================================
-     CONTENU DE LA BANDE
-     animation:defiler appelle le @keyframes défini plus bas
-     20s = durée d'un cycle complet
-     linear = vitesse constante
-     infinite = répète indéfiniment
-  ============================================ */
-  .bande-contenu {
-    display: inline-block;
-    animation: defiler 20s linear infinite;
-  }
-
-  /* ============================================
-     TEXTES DE LA BANDE - chaque span individuel
-  ============================================ */
-  .bande-contenu span {
-    color: #F5F0E8;       /* beige crème */
-    font-size: 13px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-right: 40px;   /* espace entre les textes */
-  }
-
-  /* ============================================
-     ANIMATION DÉFILEMENT
-     translateX déplace horizontalement
-     0% = position de départ
-     100% = position finale à gauche (-50%)
-     on répète le texte 3x en HTML pour que ce soit sans fin
-  ============================================ */
-  @keyframes defiler {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-
-  /* ============================================
-     SECTION PRODUITS - conteneur de toutes les catégories
-  ============================================ */
-  .produits {
-    padding: 60px;
-    background-color: #FDFAF5; /* blanc légèrement beige */
-  }
-
-  /* ============================================
-     CATEGORIE - chaque groupe (Colorés, Simples, Amazigh)
-  ============================================ */
-  .categorie {
-    margin-bottom: 60px; /* espace entre les catégories */
-  }
-
-  /* ============================================
-     TITRE CATEGORIE - ——✦ Colorés ✦——
-     display:flex centre le titre avec les ornements
-  ============================================ */
-  .categorie-titre {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 40px;
-  }
-
-  .categorie-titre h2 {
-    font-family: 'Amiri', serif;
-    font-size: 28px;
-    color: #5C3D2E;
-    letter-spacing: 4px;
-    margin: 0;
-  }
-
-  /* petits ornements et lignes du titre catégorie */
-  .titre-ornement { color: #C4A882; font-size: 14px; }
-  .titre-ligne    { color: #C4A882; letter-spacing: -4px; }
-
-  /* ============================================
-     GRILLE - disposition des cartes produits
-     display:grid avec repeat(3,1fr) = 3 colonnes égales
-     gap = espace entre les cartes
-  ============================================ */
-  .grille {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 colonnes de taille égale */
-    gap: 30px;                             /* espace entre les cartes */
-  }
-
-  /* ============================================
-     CARTE - chaque produit individuellement
-     cursor:pointer montre que c'est cliquable
-     transition prépare l'animation hover
-  ============================================ */
-  .carte {
-    background-color: #ffffff;
-    border: 1px solid #E8DDD0;   /* bordure beige subtile */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;             /* curseur main = indique que c'est cliquable */
-  }
-
-  /* ============================================
-     HOVER CARTE - la carte monte légèrement
-     translateY(-8px) déplace vers le haut de 8px
-     box-shadow ajoute une ombre douce
-  ============================================ */
-  .carte:hover {
-    transform: translateY(-8px); /* monte de 8px */
-    box-shadow: 0 10px 30px rgba(92, 61, 46, 0.1); /* ombre brun douce */
-  }
-
-  /* ============================================
-     WRAPPER IMAGE DE LA CARTE
-     position:relative permet de positionner le bouton
-     par rapport à ce conteneur
-     overflow:hidden cache le dépassement du zoom
-  ============================================ */
-  .carte-img-wrapper {
-    position: relative; /* référence pour le bouton absolu */
-    overflow: hidden;   /* cache le zoom qui déborde */
-    height: 280px;      /* hauteur fixe pour uniformiser */
-  }
-
-  /* ============================================
-     IMAGE DE LA CARTE
-  ============================================ */
-  .carte-img-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;               /* recadre sans déformer */
-    transition: transform 0.5s ease; /* prépare l'animation zoom */
-  }
-
-  /* ============================================
-     HOVER IMAGE - zoom quand on survole la carte
-     .carte:hover cible la carte parente
-     .carte-img-wrapper img cible l'image enfant
-  ============================================ */
-  .carte:hover .carte-img-wrapper img {
-    transform: scale(1.05); /* zoom de 5% */
-  }
-
-  /* ============================================
-     BOUTON AJOUTER AU PANIER - caché par défaut
-     position:absolute le place par rapport au wrapper
-     bottom:-50px = caché en dessous de l'image
-     transition anime le glissement vers le haut
-  ============================================ */
-  .carte-btn {
-    position: absolute;
-    bottom: -50px;       /* caché sous l'image par défaut */
-    left: 0;
-    width: 100%;
-    padding: 14px;
-    background-color: #5C3D2E;
-    color: #F5F0E8;
-    border: none;
-    font-size: 12px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: bottom 0.3s ease; /* anime le mouvement bas → haut */
-  }
-
-  /* ============================================
-     HOVER BOUTON - apparaît quand on survole la CARTE
-     bottom:0 = remonte jusqu'en bas de l'image
-  ============================================ */
-  .carte:hover .carte-btn {
-    bottom: 0; /* remonte et devient visible */
-  }
-
-  /* ============================================
-     HOVER BOUTON DIRECT - couleur change
-     quand la souris est directement sur le bouton
-  ============================================ */
-  .carte-btn:hover {
-    background-color: #C4A882; /* devient doré */
-  }
-
-  /* ============================================
-     INFOS DE LA CARTE - zone nom et prix
-  ============================================ */
-  .carte-info {
-    padding: 16px;
-    text-align: center;
-    border-top: 1px solid #E8DDD0; /* ligne séparatrice */
-  }
-
-  .carte-nom {
-    font-family: 'Amiri', serif;
-    font-size: 16px;
-    color: #5C3D2E;
-    margin: 0 0 6px 0;
-    letter-spacing: 1px;
-  }
-
-  .carte-prix {
-    font-size: 14px;
-    color: #C4A882; /* doré pour le prix */
-    margin: 0;
-    letter-spacing: 1px;
-  }
-
-  /* ============================================
-     FOOTER - pied de page
-     display:grid avec 3 colonnes égales
-  ============================================ */
-  footer {
-    background-color: #5C3D2E; /* fond brun noyer */
-    padding: 60px 60px 30px;
-  }
-
-  .footer-principal {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
-    gap: 60px;
-    margin-bottom: 40px;
-  }
-
-  /* logo dans le footer - même style que le header */
-  .footer-logo {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 32px;
-    color: #F5F0E8;
-    letter-spacing: 4px;
-    margin: 0 0 16px 0;
-  }
-
-  .footer-desc {
-    font-size: 13px;
-    color: #C4A882; /* doré */
-    line-height: 1.8;
-    margin: 0;
-  }
-
-  /* titres des colonnes du footer */
-  .footer-titre-col {
-    font-size: 12px;
-    color: #F5F0E8;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin: 0 0 20px 0;
-  }
-
-  /* liste des liens dans le footer */
-  .footer-liens { list-style: none; padding: 0; margin: 0; }
-  .footer-liens li { margin-bottom: 12px; }
-
-  .footer-liens a {
-    text-decoration: none;
-    color: #C4A882;
-    font-size: 13px;
-    letter-spacing: 1px;
-    transition: color 0.3s ease; /* animation douce au survol */
-  }
-
-  /* lien footer devient beige au survol */
-  .footer-liens a:hover { color: #F5F0E8; }
-
-  /* ligne décorative dorée entre le contenu et le copyright */
-  .footer-ligne {
-    border-top: 1px solid #C4A882;
-    margin-bottom: 30px;
-  }
-
-  .footer-copyright { text-align: center; }
-
-  .footer-copyright p {
-    font-size: 12px;
-    color: #C4A882;
-    letter-spacing: 2px;
-  }
-
-  /* ============================================
-     MODAL FOND - fond sombre qui couvre toute la page
-     position:fixed reste en place même si on scrolle
-     z-index:1000 s'affiche au dessus de tout
-     display:none = caché par défaut
-     devient display:flex quand on ajoute la classe "actif"
-  ============================================ */
-  .modal-fond {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 1000;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* quand la classe "actif" est ajoutée par JavaScript,
-     le modal devient visible (display:flex) */
-  .modal-fond.actif { display: flex; }
-
-  /* ============================================
-     MODAL BOITE - la fenêtre blanche au centre
-     display:flex met l'image à gauche et le texte à droite
-     position:relative pour le bouton fermer absolu
-  ============================================ */
-  .modal-boite {
-    background-color: #FDFAF5;
-    width: 800px;
-    max-width: 90%;
-    display: flex;
-    position: relative;
-    border: 1px solid #C4A882;
-    outline: 4px solid #F5F0E8;
-  }
-
-  /* ============================================
-     BOUTON FERMER ✕ - positionné en haut à droite
-     position:absolute par rapport à .modal-boite
-  ============================================ */
-  .modal-fermer {
-    position: absolute;
-    top: 12px;
-    right: 16px;
-    background: none;
-    border: none;
-    font-size: 20px;
-    color: #5C3D2E;
-    cursor: pointer;
-    font-family: 'Amiri', serif;
-  }
-
-  .modal-fermer:hover { color: #C4A882; }
-
-  /* ============================================
-     IMAGE DU MODAL - moitié gauche de la fenêtre
-  ============================================ */
-  .modal-img-wrapper {
-    width: 50%;
-    height: 450px;
-  }
-
-  .modal-img-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* ============================================
-     INFOS DU MODAL - moitié droite de la fenêtre
-     display:flex column empile les éléments verticalement
-     justify-content:center centre verticalement
-  ============================================ */
-  .modal-info {
-    width: 50%;
-    padding: 50px 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 20px;
-  }
-
-  /* ============================================
-     NOM DU PRODUIT DANS LE MODAL
-     même style que le logo Zina (Playfair italic)
-     border-bottom ajoute une ligne décorative sous le nom
-  ============================================ */
-  #modal-nom {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 30px;
-    color: #5C3D2E;
-    letter-spacing: 3px;
-    margin: 0;
-    padding-bottom: 16px;
-    border-bottom: 1px solid #C4A882;
-  }
-
-  /* petit label "PRIX" au dessus du prix */
-  .modal-label {
-    font-size: 10px;
-    color: #C4A882;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin: 0;
-  }
-
-  /* prix du produit dans le modal */
-  #modal-prix {
-    font-family: 'Amiri', serif;
-    font-size: 22px;
-    color: #5C3D2E;
-    margin: 0;
-    letter-spacing: 2px;
-  }
-
-  /* ============================================
-     À PROPOS DE CE BIJOU - titre décoratif
-     les deux span vides avec flex:1 et border-top
-     créent les lignes de chaque côté du texte
-  ============================================ */
-  .modal-about {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 10px;
-    color: #C4A882;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-  }
-
-  /* les lignes de chaque côté du titre */
-  .modal-about span {
-    flex: 1;
-    border-top: 1px solid #C4A882;
-  }
-
-  /* ============================================
-     DESCRIPTION DU PRODUIT
-     même style que le logo (Playfair italic)
-  ============================================ */
-  #modal-desc {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 15px;
-    color: #8B6347;
-    line-height: 1.9;
-    margin: 0;
-    letter-spacing: 1px;
-  }
-
-  /* matière du produit */
-  #modal-matiere {
-    font-size: 12px;
-    color: #C4A882;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin: 0;
-  }
-
-  /* ============================================
-     BOUTON AJOUTER AU PANIER DU MODAL
-     ::before et ::after ajoutent les ✦ de chaque côté
-  ============================================ */
-  .modal-btn {
-    padding: 14px;
-    background-color: #5C3D2E;
-    color: #F5F0E8;
-    border: none;
-    font-size: 11px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-family: 'Amiri', serif;
-  }
-
-  .modal-btn::before { content: "✦  "; color: #C4A882; }
-  .modal-btn::after  { content: "  ✦"; color: #C4A882; }
-  .modal-btn:hover { background-color: #C4A882; }
-
-  /* ============================================
-     BOUTON SCROLL TO TOP
-     position:fixed reste visible pendant le scroll
-     opacity:0 = invisible par défaut
-     devient visible quand la classe "visible" est ajoutée
-  ============================================ */
-  .scroll-top {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    width: 45px;
-    height: 45px;
-    background-color: #5C3D2E;
-    color: #F5F0E8;
-    border: 1px solid #C4A882;
-    font-size: 20px;
-    cursor: pointer;
-    opacity: 0;              /* invisible par défaut */
-    transition: opacity 0.3s ease, background-color 0.3s ease;
-    z-index: 999;
-  }
-
-  /* bouton visible quand la classe "visible" est ajoutée */
-  .scroll-top.visible { opacity: 1; }
-  .scroll-top:hover { background-color: #C4A882; }
-
-  /* ============================================
-     NOTIFICATION AJOUT AU PANIER
-     apparaît en bas à gauche pendant 3 secondes
-  ============================================ */
-  .notification {
-    position: fixed;
-    bottom: 40px;
-    left: 40px;
-    background-color: #5C3D2E;
-    color: #F5F0E8;
-    padding: 14px 24px;
-    border: 1px solid #C4A882;
-    font-family: 'Amiri', serif;
-    font-size: 14px;
-    letter-spacing: 2px;
-    opacity: 0;              /* invisible par défaut */
-    transition: opacity 0.4s ease;
-    z-index: 999;
-  }
-
-  /* notification visible quand la classe "visible" est ajoutée */
-  .notification.visible { opacity: 1; }
-
-  </style>
-</head>
-=======
   <link rel="stylesheet" href="stylesheet.css">
->>>>>>> 2da97d9251cd1c7a9f9494aa255188ff6313f88a
+</head>
 
 <body>
 
@@ -736,9 +45,9 @@
          HERO - les 3 images côte à côte en bannière
     ============================================ -->
     <section class="hero">
-      <img src="dblij1.jpg" alt="Bracelets dorés">
-      <img src="Rafinity.jpg" alt="Bracelet émeraude">
-      <img src="amazigh.jpg" alt="Bracelet coloré">
+      <img src="picsUsed/dblij1.jpg" alt="Bracelets dorés">
+      <img src="picsUsed/Rafinity.jpg" alt="Bracelet émeraude">
+      <img src="picsUsed/amazigh.jpg" alt="Bracelet coloré">
     </section>
 
     <!-- ============================================
@@ -792,9 +101,9 @@
 
           <!-- carte 1 : onclick appelle ouvrirModal() avec
                image, nom, prix, description, matière -->
-          <div class="carte" onclick="ouvrirModal('dblijzrak.jpg', 'Bracelet Coloré', '100 000 MAD', 'Bracelet marocain traditionnel en or, orné de pierres colorées, fabriqué à la main par des artisans marocains.', 'Or 18K & Saphir')">
+          <div class="carte" onclick="ouvrirModal('picsUsed/dblijzrak.jpg', 'Bracelet Coloré', '100 000 MAD', 'Bracelet marocain traditionnel en or, orné de pierres colorées, fabriqué à la main par des artisans marocains.', 'Or 18K & Saphir')">
             <div class="carte-img-wrapper">
-              <img src="dblijzrak.jpg" alt="Bracelet doré coloré">
+              <img src="picsUsed/dblijzrak.jpg" alt="Bracelet doré coloré">
               <!-- bouton caché qui apparaît au hover via CSS -->
               <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Ajouter au panier</button>
             </div>
@@ -805,9 +114,9 @@
           </div>
 
           <!-- carte 2 -->
-          <div class="carte" onclick="ouvrirModal('Rafinity.jpg', 'Bracelet Coloré', '50 000 MAD', 'Bracelet raffiné aux couleurs vives, inspiré des traditions berbères du Maroc.', 'Or 18K & Saphir')">
+          <div class="carte" onclick="ouvrirModal('picsUsed/Rafinity.jpg', 'Bracelet Coloré', '50 000 MAD', 'Bracelet raffiné aux couleurs vives, inspiré des traditions berbères du Maroc.', 'Or 18K & Saphir')">
             <div class="carte-img-wrapper">
-              <img src="Rafinity.jpg" alt="Bracelet doré coloré">
+              <img src="picsUsed/Rafinity.jpg" alt="Bracelet doré coloré">
               <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Ajouter au panier</button>
             </div>
             <div class="carte-info">
@@ -817,9 +126,9 @@
           </div>
 
           <!-- carte 3 -->
-          <div class="carte" onclick="ouvrirModal('dblij1.jpg', 'Bracelet Coloré', '70 000 MAD', 'Bracelet dblij coloré, pièce unique travaillée à la main avec des motifs floraux traditionnels.', 'Or 18K & Saphir')">
+          <div class="carte" onclick="ouvrirModal('picsUsed/dblij1.jpg', 'Bracelet Coloré', '70 000 MAD', 'Bracelet dblij coloré, pièce unique travaillée à la main avec des motifs floraux traditionnels.', 'Or 18K & Saphir')">
             <div class="carte-img-wrapper">
-              <img src="dblij1.jpg" alt="Bracelet coloré">
+              <img src="picsUsed/dblij1.jpg" alt="Bracelet coloré">
               <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Ajouter au panier</button>
             </div>
             <div class="carte-info">
@@ -845,9 +154,9 @@
         <div class="grille">
 
           <!-- carte 4 -->
-          <div class="carte" onclick="ouvrirModal('dblijsfar.jpg', 'Bracelet Simple', '60 000 MAD', 'Bracelet simple en or jaune, élégant et discret, parfait pour toutes les occasions.', 'Or 18K')">
+          <div class="carte" onclick="ouvrirModal('picsUsed/dblijsfar.jpg', 'Bracelet Simple', '60 000 MAD', 'Bracelet simple en or jaune, élégant et discret, parfait pour toutes les occasions.', 'Or 18K')">
             <div class="carte-img-wrapper">
-              <img src="dblijsfar.jpg" alt="Bracelet simple 1">
+              <img src="picsUsed/dblijsfar.jpg" alt="Bracelet simple 1">
               <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Ajouter au panier</button>
             </div>
             <div class="carte-info">
@@ -857,9 +166,9 @@
           </div>
 
           <!-- carte 5 -->
-          <div class="carte" onclick="ouvrirModal('DZ.jpg', 'Bracelet Simple', '40 000 MAD', 'Bracelet fin et raffiné, inspiré du style algéro-marocain traditionnel.', 'Or 18K')">
+          <div class="carte" onclick="ouvrirModal('picsUsed/DZ.jpg', 'Bracelet Simple', '40 000 MAD', 'Bracelet fin et raffiné, inspiré du style algéro-marocain traditionnel.', 'Or 18K')">
             <div class="carte-img-wrapper">
-              <img src="DZ.jpg" alt="Bracelet simple 2">
+              <img src="picsUsed/DZ.jpg" alt="Bracelet simple 2">
               <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Ajouter au panier</button>
             </div>
             <div class="carte-info">
@@ -869,9 +178,9 @@
           </div>
 
           <!-- carte 6 -->
-          <div class="carte" onclick="ouvrirModal('dblijsimple.jpg', 'Bracelet Simple', '35 000 MAD', 'Bracelet dblij simple, pureté et élégance, fabriqué en or massif.', 'Or 18K')">
+          <div class="carte" onclick="ouvrirModal('picsUsed/dblijsimple.jpg', 'Bracelet Simple', '35 000 MAD', 'Bracelet dblij simple, pureté et élégance, fabriqué en or massif.', 'Or 18K')">
             <div class="carte-img-wrapper">
-              <img src="dblijsimple.jpg" alt="Bracelet simple 3">
+              <img src="picsUsed/dblijsimple.jpg" alt="Bracelet simple 3">
               <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Ajouter au panier</button>
             </div>
             <div class="carte-info">
@@ -897,9 +206,9 @@
         <div class="grille">
 
           <!-- carte 7 -->
-          <div class="carte" onclick="ouvrirModal('amazigh.jpg', 'Bracelet Amazigh', '3000 MAD', 'Bracelet amazigh authentique, symbole de la culture berbère, orné de gravures traditionnelles.', 'Argent & Corail')">
+          <div class="carte" onclick="ouvrirModal('picsUsed/amazigh.jpg', 'Bracelet Amazigh', '3000 MAD', 'Bracelet amazigh authentique, symbole de la culture berbère, orné de gravures traditionnelles.', 'Argent & Corail')">
             <div class="carte-img-wrapper">
-              <img src="amazigh.jpg" alt="Bracelet amazigh 1">
+              <img src="picsUsed/amazigh.jpg" alt="Bracelet amazigh 1">
               <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Ajouter au panier</button>
             </div>
             <div class="carte-info">
@@ -909,9 +218,9 @@
           </div>
 
           <!-- carte 8 -->
-          <div class="carte" onclick="ouvrirModal('tanbalt.jpg', 'Bracelet Amazigh Tanbalt', '4500 MAD', 'Tanbalt — bracelet berbère ancien, fabriqué en argent massif avec des motifs géométriques amazighs.', 'Argent Massif')">
+          <div class="carte" onclick="ouvrirModal('picsUsed/tanbalt.jpg', 'Bracelet Amazigh Tanbalt', '4500 MAD', 'Tanbalt — bracelet berbère ancien, fabriqué en argent massif avec des motifs géométriques amazighs.', 'Argent Massif')">
             <div class="carte-img-wrapper">
-              <img src="tanbalt.jpg" alt="Bracelet amazigh 2">
+              <img src="picsUsed/tanbalt.jpg" alt="Bracelet amazigh 2">
               <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Ajouter au panier</button>
             </div>
             <div class="carte-info">
@@ -921,9 +230,9 @@
           </div>
 
           <!-- carte 9 -->
-          <div class="carte" onclick="ouvrirModal('dblihamazigh.jpg', 'Bracelet Amazigh', '2500 MAD', 'Bracelet dblij amazigh, mélange unique entre le style dblij et les motifs berbères traditionnels.', 'Argent & Or')">
+          <div class="carte" onclick="ouvrirModal('picsUsed/dblihamazigh.jpg', 'Bracelet Amazigh', '2500 MAD', 'Bracelet dblij amazigh, mélange unique entre le style dblij et les motifs berbères traditionnels.', 'Argent & Or')">
             <div class="carte-img-wrapper">
-              <img src="dblihamazigh.jpg" alt="Bracelet amazigh 3">
+              <img src="picsUsed/dblihamazigh.jpg" alt="Bracelet amazigh 3">
               <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Ajouter au panier</button>
             </div>
             <div class="carte-info">
@@ -942,257 +251,6 @@
   <!-- ============================================
        FOOTER - pied de page avec 3 colonnes
   ============================================ -->
-<<<<<<< HEAD
-=======
- <!-- HERO - les 3 images côte à côte -->
-<section class="hero">
-  <img src="picsUsed/dblij1.jpg" alt="Bracelets dorés">
-  <img src="picsUsed/Rafinity.jpg" alt="Bracelet émeraude">
-  <img src="picsUsed/amazigh.jpg" alt="Bracelet coloré">
-</section>
- <!-- ============================================
-     CITATION - sous les images du hero
-============================================ -->
-    <div class="citation">
-    <span class="citation-ligne">——</span>
-    <span class="citation-ornement">✦</span>
-    <p class="citation-texte">"Every piece tells a story of Moroccan heritage"</p>
-    <span class="citation-ornement">✦</span>
-    <span class="citation-ligne">——</span>
-    </div>
-
-=======
-    <!-- ============================================
-     BANDE DÉFILANTE - texte qui bouge
-============================================ -->
-<div class="bande">
-  <div class="bande-contenu">
-    <span>✦ Handcrafted in Morocco</span>
-    <span>✦ Free Shipping</span>
-    <span>✦ Authentic Jewelry</span>
-    <span>✦ Handcrafted in Morocco</span>
-    <span>✦ Free Shipping</span>
-    <span>✦ Authentic Jewelry</span>
-    <span>✦ Handcrafted in Morocco</span>
-    <span>✦ Free Shipping</span>
-    <span>✦ Authentic Jewelry</span>
-  </div>
-</div>
-    <!-- ============================================
-     SECTION PRODUITS - grille de bracelets
-     divisée en 3 catégories
-============================================ -->
-<section class="produits">
-
-  <!-- ============================================
-       CATEGORIE 1 - Bracelets Colorés
-  ============================================ -->
-  <div class="categorie">
-
-    <!-- titre de la catégorie -->
-    <div class="categorie-titre">
-      <span class="titre-ligne">——</span>
-      <span class="titre-ornement">✦</span>
-      <h2>Colorés</h2>
-      <span class="titre-ornement">✦</span>
-      <span class="titre-ligne">——</span>
-    </div>
-
-    <!-- grille de cartes -->
-    <div class="grille">
-
-      <!-- carte produit -->
-      <div class="carte">
-        <div class="carte-img-wrapper">
-          <img src="dblijzrak.jpg" alt="Bracelet  gold coloré ">
-          <button class="carte-btn">Add to Cart</button>
-        </div>
-        <div class="carte-info">
-          <p class="carte-nom">Bracelet Coloré </p>
-          <p class="carte-prix">100 000 MAD</p>
-        </div>
-      </div>
-
-      <div class="carte">
-        <div class="carte-img-wrapper">
-          <img src="picsUsed/Rafinity.jpg" alt="Bracelet gold coloré ">
-          <button class="carte-btn">Add to Cart</button>
-        </div>
-        <div class="carte-info">
-          <p class="carte-nom">Bracelet Coloré </p>
-          <p class="carte-prix">50 000 MAD</p>
-        </div>
-      </div>
-
-      <div class="carte">
-        <div class="carte-img-wrapper">
-          <img src="picsUsed/dblij1.jpg" alt="Bracelet coloré 3">
-          <button class="carte-btn">Add to Cart</button>
-        </div>
-        <div class="carte-info">
-          <p class="carte-nom">Bracelet Coloré </p>
-          <p class="carte-prix">70 000 MAD</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ============================================
-       CATEGORIE 2 - Bracelets Simples
-  ============================================ -->
-  <div class="categorie">
-
-    <div class="categorie-titre">
-      <span class="titre-ligne">——</span>
-      <span class="titre-ornement">✦</span>
-      <h2>Simples</h2>
-      <span class="titre-ornement">✦</span>
-      <span class="titre-ligne">——</span>
-    </div>
-
-    <div class="grille">
-
-      <div class="carte">
-        <div class="carte-img-wrapper">
-          <img src="picsUsed/dblijsfar.jpg" alt="Bracelet simple 1">
-          <button class="carte-btn">Add to Cart</button>
-        </div>
-        <div class="carte-info">
-          <p class="carte-nom">Bracelet Simple </p>
-          <p class="carte-prix">60 000 MAD</p>
-        </div>
-      </div>
-
-      <div class="carte">
-        <div class="carte-img-wrapper">
-          <img src="picsUsed/DZ.jpg" alt="Bracelet simple 2">
-          <button class="carte-btn">Add to Cart</button>
-        </div>
-        <div class="carte-info">
-          <p class="carte-nom">Bracelet Simple </p>
-          <p class="carte-prix">40 000 MAD</p>
-        </div>
-      </div>
-
-      <div class="carte">
-        <div class="carte-img-wrapper">
-          <img src="picsUsed/dblijsimple.jpg" alt="Bracelet simple 3">
-          <button class="carte-btn">Add to Cart</button>
-        </div>
-        <div class="carte-info">
-          <p class="carte-nom">Bracelet Simple </p>
-          <p class="carte-prix">35 000 MAD</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ============================================
-       CATEGORIE 3 - Bracelets Amazigh
-  ============================================ -->
-  <div class="categorie">
-
-    <div class="categorie-titre">
-      <span class="titre-ligne">——</span>
-      <span class="titre-ornement">✦</span>
-      <h2>Amazigh</h2>
-      <span class="titre-ornement">✦</span>
-      <span class="titre-ligne">——</span>
-    </div>
-
-    <div class="grille">
-
-      <div class="carte">
-        <div class="carte-img-wrapper">
-          <img src="picsUsed/amazigh.jpg" alt="Bracelet amazigh 1">
-          <button class="carte-btn">Add to Cart</button>
-        </div>
-        <div class="carte-info">
-          <p class="carte-nom">Bracelet Amazigh </p>
-          <p class="carte-prix">3000 MAD</p>
-        </div>
-      </div>
-
-      <div class="carte">
-        <div class="carte-img-wrapper">
-          <img src="picsUsed/tanbalt.jpg" alt="Bracelet amazigh 2">
-          <button class="carte-btn">Add to Cart</button>
-        </div>
-        <div class="carte-info">
-          <p class="carte-nom">Bracelet Amazigh Tanbalt</p>
-          <p class="carte-prix">4500 MAD</p>
-        </div>
-      </div>
-
-      <div class="carte">
-        <div class="carte-img-wrapper">
-          <img src="picsUsed/dblihamazigh.jpg" alt="Bracelet amazigh 3">
-          <button class="carte-btn">Add to Cart</button>
-        </div>
-        <div class="carte-info">
-          <p class="carte-nom">Bracelet Amazigh</p>
-          <p class="carte-prix">2500 MAD</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-</section>
-  <footer>
-
-  <!-- ============================================
-       FOOTER - pied de page
-  ============================================ -->
-
-  <!-- partie principale du footer -->
-  <div class="footer-principal">
-
-    <!-- colonne 1 : logo et description -->
-    <div class="footer-col">
-      <h3 class="footer-logo">Zina</h3>
-      <p class="footer-desc">
-        Authentic Moroccan jewelry, handcrafted with love and tradition.
-      </p>
-    </div>
-
-    <!-- colonne 2 : liens rapides -->
-    <div class="footer-col">
-      <h4 class="footer-titre-col">Quick Links</h4>
-      <ul class="footer-liens">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="bracelets.html">Bracelets</a></li>
-        <li><a href="sets.html">Sets</a></li>
-        <li><a href="mdamma.html">Mdamma & Chmar</a></li>
-        <li><a href="rings.html">Rings & Earrings</a></li>
-      </ul>
-    </div>
-
-    <!-- colonne 3 : réseaux sociaux -->
-    <div class="footer-col">
-      <h4 class="footer-titre-col">Follow Us</h4>
-      <ul class="footer-liens">
-        <li><a href="#">Instagram @Zina_jewelery</a></li>
-        <li><a href="#">Facebook @Zina_jewelery </a></li>
-        <li><a href="#">TikTok @Zina_jewelery2004</a></li>
-      </ul>
-    </div>
-
-  </div>
-
-  <!-- ligne décorative -->
-  <div class="footer-ligne"></div>
-
-  <!-- copyright -->
-  <div class="footer-copyright">
-    <p>✦ © 2026 Zina — All rights reserved ✦</p>
-  </div>
-
-</footer>
-</main>
->>>>>>> 2da97d9251cd1c7a9f9494aa255188ff6313f88a
   <footer>
     <div class="footer-principal">
 
@@ -1299,7 +357,7 @@
     ============================================ */
     function ouvrirModal(image, nom, prix, description, matiere) {
 
-      /* remplace le src de l'image par le nom du fichier */
+      /* remplace le src de l'image par le chemin complet */
       document.getElementById('modal-img').src = image;
 
       /* remplace le texte de chaque élément */
