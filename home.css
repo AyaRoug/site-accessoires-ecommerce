@@ -1,192 +1,447 @@
-  /* ============================================
-     HEADER - barre de navigation principale
-     contient le logo à gauche et le menu à droite
-  ============================================ */
-  body{
-    background-color: #ad8e5e;
-  }
+/* ============================================
+   RESET GLOBAL
+   supprime les marges et paddings par défaut
+   de tous les navigateurs
+============================================ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  header {
-    background-color: #F5F0E8; /* couleur beige crème inspirée du moodboard */
-    display: flex;              /* met les éléments en ligne (logo + nav) */
-    justify-content: space-between; /* logo à gauche, nav à droite */
-    align-items: center;        /* centre verticalement logo et nav */
-    padding: 20px 60px;         /* espace intérieur : 20px haut/bas, 60px gauche/droite */
-    gap: 60px;                  /* espace entre le logo et le nav */
-  }
+/* ============================================
+   BODY - style global de la page
+============================================ */
+body {
+  font-family: 'Amiri', serif;
+  background-color: #FDFAF5;
+}
 
-  /* ============================================
-     LOGO - le nom "Zina" affiché à gauche
-  ============================================ */
+/* ============================================
+   HEADER - barre de navigation principale
+============================================ */
+header {
+  background-color: #F5F0E8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  gap: 60px;
+}
 
-  .logo h1 {
+/* ============================================
+   LOGO
+============================================ */
+.logo h1 {
   font-family: 'Playfair Display', serif;
   font-style: italic;
   font-size: 36px;
   letter-spacing: 5px;
-}
-
-  /* ============================================
-     NAV - conteneur des liens de navigation
-  ============================================ */
-
-  nav ul {
-    list-style: none;  /* supprime les puces de la liste */
-    display: flex;     /* met les liens côte à côte (horizontal) */
-    gap: 40px;         /* espace entre chaque lien */
-    margin: 0;         /* supprime la marge par défaut du ul */
-    padding: 0;        /* supprime le padding par défaut du ul */
-  }
-
-  /* ============================================
-     LIENS - style de chaque lien du menu
-  ============================================ */
-
-  nav ul li a {
-    text-decoration: none;      /* supprime le soulignement par défaut */
-    color: #5C3D2E;             /* même brun que le logo */
-    font-size: 14px;            /* taille du texte des liens */
-    letter-spacing: 2px;        /* légèrement espacé pour un look raffiné */
-    text-transform: uppercase;  /* met les lettres en majuscules */
-  }
-
-  /* ============================================
-     HOVER - effet quand on passe la souris sur un lien
-  ============================================ */
-
-  nav ul li a:hover {
-    color: #C4A882; /* couleur dorée/caramel au survol */
-  }
-
-  /* ============================================
-     ACTIVE - style du lien de la page actuelle
-     (ici la page Bracelets sera soulignée)
-  ============================================ */
-
-  nav ul li a.active {
-    border-bottom: 2px solid #5C3D2E; /* ligne sous le lien actif */
-  }
-
-
-  /* Conteneur des icônes */
-.header-icons {
-    display: flex;
-    align-items: center;
-    gap: 20px; /* Espace entre chaque icône */
-}
-
-/* Style de base des SVG */
-.header_nav-icon {
-    width: 24px;
-    height: 24px;
-    transition: transform 0.2s ease, color 0.2s ease;
-    cursor: pointer;
-    color: #333; /* Change la couleur selon ton design */
-}
-
-/* Effet au survol */
-.header_nav-icon:hover {
-    transform: scale(1.1);
-    color: #000; /* Couleur plus foncée au survol */
-}
-
-/* Supprime le soulignement des liens autour des icônes */
-.icon-link {
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-}
-
-
-.principal-earring {
-    display: flex;  
-    width: 100%;
-    height: 55vh;
-    margin: 0%;
-    padding: 0%;
-}
-
-.principal-earring img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 20% 40%;
-}
-
-
-
-.card {
-    padding: 20px;
-    text-align: center;
-    background-color: white; /* Fond blanc pour détacher du beige */
-}
-
-.card h3 {
-    font-family: 'Playfair Display', serif; /* Police de luxe */
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.card .description {
-    font-style: italic;
-    font-size: 0.9rem;
-    color: #666;
-    margin-bottom: 15px;
-}
-
-.card .price {
-    font-weight: bold;
-    color: #d4af37; /* Couleur dorée */
-    font-size: 1.1rem;
-}
-
-
-
-
-
-
-
-
-
-
-/* ============================================
-   CITATION - sous les images hero
-============================================ */
-.citation {
-  display: flex;            /* met tout en ligne */
-  align-items: center;      /* centre verticalement */
-  justify-content: center;  /* centre horizontalement */
-  gap: 16px;                /* espace entre les éléments */
-  padding: 40px 60px;       /* espace autour */
-  background-color: #F5F0E8; /* même beige que le header */
-}
-
-/* ============================================
-   TEXTE DE LA CITATION
-============================================ */
-.citation-texte {
-  font-family: 'Amiri', serif; /* même police que le logo */
-  font-size: 22px;
-  color: #5C3D2E;              /* brun noyer */
-  font-style: italic;          /* italique pour l'élégance */
-  letter-spacing: 2px;
+  color: #5C3D2E;
   margin: 0;
 }
 
 /* ============================================
-   ORNEMENTS - les ✦ décoratifs
+   NAV
 ============================================ */
-.citation-ornement {
-  color: #C4A882;   /* doré */
-  font-size: 16px;
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #5C3D2E;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+nav ul li a:hover { color: #C4A882; }
+
+nav ul li a.active {
+  border-bottom: 2px solid #5C3D2E;
 }
 
 /* ============================================
-   LIGNES - les —— de chaque côté
+   HERO ACCUEIL - 3 images côte à côte
+   display:flex met les images en ligne
+   position:relative pour superposer le texte
 ============================================ */
-.citation-ligne {
-  color: #C4A882;   /* doré */
-  font-size: 20px;
-  letter-spacing: -4px; /* resserre les tirets */
+.hero-accueil {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  border: 8px solid #F5F0E8;
+  outline: 2px solid #C4A882;
+  margin: 20px 60px;
+  gap: 4px;
+  background-color: #C4A882;
 }
+
+/* ============================================
+   IMAGES DU HERO - chaque image prend 1/3
+============================================ */
+.hero-accueil img {
+  width: 33.33%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.hero-accueil img:hover {
+  transform: scale(1.05);
+  filter: brightness(0.9);
+}
+
+/* ============================================
+   TEXTE CENTRÉ PAR DESSUS LES IMAGES
+   position:absolute superpose sur les images
+   z-index:2 pour être au dessus
+============================================ */
+.hero-accueil-contenu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  z-index: 2;
+}
+
+/* ornements ✦ ✦ ✦ au dessus du titre */
+.hero-accueil-ornement {
+  color: #C4A882;
+  font-size: 20px;
+  letter-spacing: 8px;
+}
+
+/* titre principal Zina */
+.hero-accueil-titre {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 90px;
+  color: #ffffff;
+  letter-spacing: 10px;
+  margin: 0;
+  line-height: 1;
+}
+
+/* sous-titre */
+.hero-accueil-sous-titre {
+  font-family: 'Amiri', serif;
+  font-size: 14px;
+  color: #F5F0E8;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* ligne décorative dorée */
+.hero-accueil-ligne {
+  width: 60px;
+  height: 1px;
+  background-color: #C4A882;
+}
+
+/* bouton découvrir */
+.hero-accueil-btn {
+  margin-top: 10px;
+  padding: 16px 40px;
+  background: transparent;
+  border: 1px solid #C4A882;
+  color: #F5F0E8;
+  font-family: 'Amiri', serif;
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.hero-accueil-btn:hover {
+  background-color: #C4A882;
+  color: #5C3D2E;
+}
+
+/* ============================================
+   BANDE DÉFILANTE
+============================================ */
+.bande {
+  background-color: #5C3D2E;
+  padding: 14px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.bande-contenu {
+  display: inline-block;
+  animation: defiler 20s linear infinite;
+}
+
+.bande-contenu span {
+  color: #F5F0E8;
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-right: 40px;
+}
+
+@keyframes defiler {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ============================================
+   SECTION NOTRE HISTOIRE
+============================================ */
+.histoire {
+  padding: 100px 60px;
+  background-color: #F5F0E8;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.histoire-titre {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.histoire-titre h2 {
+  font-family: 'Amiri', serif;
+  font-size: 32px;
+  color: #5C3D2E;
+  letter-spacing: 4px;
+  margin: 0;
+}
+
+.histoire-ornement { color: #C4A882; font-size: 16px; }
+.histoire-ligne    { color: #C4A882; letter-spacing: -4px; }
+
+.histoire-texte {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 17px;
+  color: #8B6347;
+  line-height: 2;
+  max-width: 700px;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+/* ============================================
+   SECTION NOS COLLECTIONS
+============================================ */
+.collections {
+  padding: 100px 60px;
+  background-color: #FDFAF5;
+}
+
+.collections-titre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 60px;
+}
+
+.collections-titre h2 {
+  font-family: 'Amiri', serif;
+  font-size: 32px;
+  color: #5C3D2E;
+  letter-spacing: 4px;
+  margin: 0;
+}
+
+.collections-grille {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.collection-carte {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.collection-carte img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.collection-carte:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.9);
+}
+
+.collection-carte-texte {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.collection-carte-texte h3 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 22px;
+  color: #ffffff;
+  letter-spacing: 3px;
+  margin: 0 0 8px 0;
+}
+
+.collection-carte-lien {
+  font-family: 'Amiri', serif;
+  font-size: 11px;
+  color: #C4A882;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid #C4A882;
+  padding-bottom: 2px;
+  transition: color 0.3s ease;
+}
+
+.collection-carte-lien:hover {
+  color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+
+/* ============================================
+   CITATION
+============================================ */
+.citation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 40px 60px;
+  background-color: #F5F0E8;
+}
+
+.citation-texte {
+  font-family: 'Amiri', serif;
+  font-size: 22px;
+  color: #5C3D2E;
+  font-style: italic;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.citation-ornement {
+  color: #C4A882;
+  font-size: 16px;
+}
+
+.citation-ligne {
+  color: #C4A882;
+  font-size: 20px;
+  letter-spacing: -4px;
+}
+
+/* ============================================
+   FOOTER
+============================================ */
+footer {
+  background-color: #5C3D2E;
+  padding: 60px 60px 30px;
+}
+
+.footer-principal {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+  margin-bottom: 40px;
+}
+
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 32px;
+  color: #F5F0E8;
+  letter-spacing: 4px;
+  margin: 0 0 16px 0;
+}
+
+.footer-desc {
+  font-size: 13px;
+  color: #C4A882;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.footer-titre-col {
+  font-size: 12px;
+  color: #F5F0E8;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: 0 0 20px 0;
+}
+
+.footer-liens { list-style: none; padding: 0; margin: 0; }
+.footer-liens li { margin-bottom: 12px; }
+
+.footer-liens a {
+  text-decoration: none;
+  color: #C4A882;
+  font-size: 13px;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.footer-liens a:hover { color: #F5F0E8; }
+
+.footer-ligne {
+  border-top: 1px solid #C4A882;
+  margin-bottom: 30px;
+}
+
+.footer-copyright { text-align: center; }
+
+.footer-copyright p {
+  font-size: 12px;
+  color: #C4A882;
+  letter-spacing: 2px;
+}
+
+/* ============================================
+   BOUTON SCROLL TO TOP
+============================================ */
+.scroll-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 45px;
+  height: 45px;
+  background-color: #5C3D2E;
+  color: #F5F0E8;
+  border: 1px solid #C4A882;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+  z-index: 999;
+}
+
+.scroll-top.visible { opacity: 1; }
+.scroll-top:hover { background-color: #C4A882; }

@@ -3,66 +3,238 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zina - Home</title>
+  <title>Zina - Accueil</title>
 
-  <link href="home.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Amiri&display=swap" rel="stylesheet">
+
+  <!-- CSS partagé -->
+  <link rel="stylesheet" href="home.css">
 
 </head>
 
 <body>
 
-  
-  
-
+  <!-- ============================================
+       HEADER - barre de navigation
+  ============================================ -->
   <header>
     <div class="logo">
       <h1>Zina</h1>
     </div>
     <nav>
       <ul>
-        <li><a href="home.html" class="active">Home</a></li>
-        <li><a href="bracelets.html" >Bracelets</a></li>
-        <li><a href="sets.html">Sets</a></li>
+        <!-- class="active" sur Accueil car on est sur cette page -->
+        <li><a href="index.html" class="active">Accueil</a></li>
+        <li><a href="bracelets.html">Bracelets</a></li>
+        <li><a href="sets.html">Collections</a></li>
         <li><a href="mdamma.html">Mdamma & Chmar</a></li>
-        <li><a href="Rings&Earrings.html">Rings & Earrings</a></li>
+        <li><a href="rings.html">Bagues & Boucles</a></li>
       </ul>
     </nav>
+  </header>
 
-    
-    <div class="header-icons">
-        <a href="#" class="icon-link">
-         <svg class="header_nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-            <circle cx="12" cy="7" r="4"></circle>
-         </svg>
-        </a>
+  <main>
 
-        <a href="#" class="icon-link">
-          <svg class="header_nav-icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="9" cy="21" r="1"></circle>
-            <circle cx="20" cy="21" r="1"></circle>
-            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-          </svg>
-        </a>
+    <!-- ============================================
+     HERO - 3 images côte à côte avec titre centré
+============================================ -->
+<section class="hero-accueil">
 
-        <a href="#" class="icon-link">
-         <svg class="header_nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-         </svg>
-        </a>
+  <!-- les 3 images côte à côte -->
+  <img src="imgAcceuil1.jpg" alt="Bijoux marocains Zina">
+  <img src="imgAcceil2.jpg" alt="Bijoux marocains Zina">
+  <img src="imgAcceul3.jpg" alt="Bijoux marocains Zina">
+
+  <!-- texte centré par dessus les images -->
+  <div class="hero-accueil-contenu">
+    <span class="hero-accueil-ornement">✦ ✦ ✦</span>
+    <h1 class="hero-accueil-titre">Zina</h1>
+    <div class="hero-accueil-ligne"></div>
+    <p class="hero-accueil-sous-titre">Bijoux Marocains Traditionnels</p>
+    <a href="bracelets.html" class="hero-accueil-btn">Découvrir nos collections</a>
+  </div>
+
+</section>
+
+    <!-- ============================================
+         BANDE DÉFILANTE
+    ============================================ -->
+    <div class="bande">
+      <div class="bande-contenu">
+        <span>✦ Artisanat Marocain</span>
+        <span>✦ Livraison Gratuite</span>
+        <span>✦ Bijoux Authentiques</span>
+        <span>✦ Artisanat Marocain</span>
+        <span>✦ Livraison Gratuite</span>
+        <span>✦ Bijoux Authentiques</span>
+        <span>✦ Artisanat Marocain</span>
+        <span>✦ Livraison Gratuite</span>
+        <span>✦ Bijoux Authentiques</span>
+      </div>
     </div>
- </header>
 
+    <!-- ============================================
+         NOTRE HISTOIRE - texte poétique sur Zina
+    ============================================ -->
+    <section class="histoire">
 
-    <main>
+      <div class="histoire-titre">
+        <span class="histoire-ligne">——</span>
+        <span class="histoire-ornement">✦</span>
+        <h2>Notre Histoire</h2>
+        <span class="histoire-ornement">✦</span>
+        <span class="histoire-ligne">——</span>
+      </div>
+
+      <p class="histoire-texte">
+        Zina est née de la passion pour l'artisanat marocain traditionnel.
+        Chaque bijou que nous créons est une œuvre unique, façonnée à la main
+        par des artisans marocains qui perpétuent un savoir-faire ancestral.
+        De l'or fin aux pierres précieuses, chaque pièce raconte une histoire
+        de beauté, de tradition et d'élégance intemporelle.
+      </p>
+
+    </section>
+
+    <!-- ============================================
+         NOS COLLECTIONS - 4 cartes cliquables
+    ============================================ -->
+    <section class="collections">
+
+      <div class="collections-titre">
+        <span class="histoire-ligne">——</span>
+        <span class="histoire-ornement">✦</span>
+        <h2>Nos Collections</h2>
+        <span class="histoire-ornement">✦</span>
+        <span class="histoire-ligne">——</span>
+      </div>
+
+      <div class="collections-grille">
+
+        <!-- collection 1 : Bracelets -->
+        <div class="collection-carte">
+          <img src="picsUsed/dblij1.jpg" alt="Bracelets">
+          <div class="collection-carte-texte">
+            <h3>Bracelets</h3>
+            <a href="bracelets.html" class="collection-carte-lien">Découvrir</a>
+          </div>
+        </div>
+
+        <!-- collection 2 : Sets -->
+        <div class="collection-carte">
+          <img src="picsUsed/amazigh.jpg" alt="Sets">
+          <div class="collection-carte-texte">
+            <h3>Collections</h3>
+            <a href="sets.html" class="collection-carte-lien">Découvrir</a>
+          </div>
+        </div>
+
+        <!-- collection 3 : Mdamma & Chmar -->
+        <div class="collection-carte">
+          <img src="picsUsed/Rafinity.jpg" alt="Mdamma et Chmar">
+          <div class="collection-carte-texte">
+            <h3>Mdamma & Chmar</h3>
+            <a href="mdamma.html" class="collection-carte-lien">Découvrir</a>
+          </div>
+        </div>
+
+        <!-- collection 4 : Bagues & Boucles -->
+        <div class="collection-carte">
+          <img src="picsUsed/dblijzrak.jpg" alt="Bagues et Boucles">
+          <div class="collection-carte-texte">
+            <h3>Bagues & Boucles</h3>
+            <a href="rings.html" class="collection-carte-lien">Découvrir</a>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ============================================
+         CITATION FINALE
+    ============================================ -->
+    <div class="citation">
+      <span class="citation-ligne">——</span>
+      <span class="citation-ornement">✦</span>
+      <p class="citation-texte">"Chaque bijou raconte une histoire du patrimoine marocain"</p>
+      <span class="citation-ornement">✦</span>
+      <span class="citation-ligne">——</span>
+    </div>
+
   </main>
 
-
-
-
+  <!-- ============================================
+       FOOTER - pied de page avec 3 colonnes
+  ============================================ -->
   <footer>
+    <div class="footer-principal">
+
+      <!-- colonne 1 : logo + description -->
+      <div class="footer-col">
+        <h3 class="footer-logo">Zina</h3>
+        <p class="footer-desc">Bijoux marocains authentiques, fabriqués avec amour et tradition.</p>
+      </div>
+
+      <!-- colonne 2 : liens rapides -->
+      <div class="footer-col">
+        <h4 class="footer-titre-col">Liens Rapides</h4>
+        <ul class="footer-liens">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="bracelets.html">Bracelets</a></li>
+          <li><a href="sets.html">Collections</a></li>
+          <li><a href="mdamma.html">Mdamma & Chmar</a></li>
+          <li><a href="rings.html">Bagues & Boucles</a></li>
+        </ul>
+      </div>
+
+      <!-- colonne 3 : réseaux sociaux -->
+      <div class="footer-col">
+        <h4 class="footer-titre-col">Suivez-Nous</h4>
+        <ul class="footer-liens">
+          <li><a href="#">Instagram @Zina_jewelery</a></li>
+          <li><a href="#">Facebook @Zina_jewelery</a></li>
+          <li><a href="#">TikTok @Zina_jewelery2004</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="footer-ligne"></div>
+    <div class="footer-copyright">
+      <p>✦ © 2026 Zina — Tous droits réservés ✦</p>
+    </div>
   </footer>
+
+  <!-- ============================================
+       BOUTON SCROLL TO TOP
+  ============================================ -->
+  <button class="scroll-top" id="scrollTop" onclick="allerEnHaut()">↑</button>
+
+  <!-- ============================================
+       JAVASCRIPT
+  ============================================ -->
+  <script>
+
+    /* remonte en haut de la page doucement */
+    function allerEnHaut() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+    /* affiche le bouton ↑ quand on descend de 300px */
+    window.addEventListener('scroll', function() {
+      const bouton = document.getElementById('scrollTop');
+      if (window.scrollY > 300) {
+        bouton.classList.add('visible');
+      } else {
+        bouton.classList.remove('visible');
+      }
+    });
+
+  </script>
 
 </body>
 </html>
