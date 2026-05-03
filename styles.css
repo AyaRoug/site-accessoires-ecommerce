@@ -684,8 +684,7 @@
   /* notification visible quand la classe "visible" est ajoutée */
   .notification.visible { opacity: 1; }
 
- 
-
+/* CSS about the function filter (javascript) */
 
 
 body {
@@ -711,7 +710,7 @@ body.dark-theme .carte-prix {
 }
 
 
-
+/* CSS about the function filter (javascript) */
 
 
 .carte {

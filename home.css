@@ -66,6 +66,56 @@ nav ul li a.active {
   border-bottom: 2px solid #5C3D2E;
 }
 
+
+
+
+ /* Conteneur des icônes */
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espace entre chaque icône */
+}
+
+/* Style de base des SVG */
+.header_nav-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s ease, color 0.2s ease;
+    cursor: pointer;
+    color: #333; /* Change la couleur selon ton design */
+}
+
+/* Effet au survol */
+.header_nav-icon:hover {
+    transform: scale(1.1);
+    color: #000; /* Couleur plus foncée au survol */
+}
+
+/* Supprime le soulignement des liens autour des icônes */
+.icon-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ============================================
    HERO ACCUEIL - 3 images côte à côte
    display:flex met les images en ligne
