@@ -3,8 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rings & Earrings</title>
+    <title>Bagues & Boucles</title>
+    
+  <!-- ============================================
+       GOOGLE FONTS
+       on charge deux polices depuis internet :
+       - Playfair Display : utilisée pour le logo "Zina" et les titres luxe
+       - Amiri : utilisée pour les textes arabesques et citations
+       doit être AVANT le style pour que les polices soient disponibles
+  ============================================ -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Amiri&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="JSShared.js"></script>
 </head>
 <body>
     
@@ -15,11 +25,11 @@
     </div>
     <nav>
       <ul>
-        <li><a href="home.html">Home</a></li>
+        <li><a href="home.html">Accueil</a></li>
         <li><a href="bracelets.html">Bracelets</a></li>
-        <li><a href="sets.html">Sets</a></li>
+        <li><a href="sets.html">Collections</a></li>
         <li><a href="mdamma.html">Mdamma & Chmar</a></li>
-        <li><a href="Rings&Earrings.html" class="active"> Rings & Earrings</a> </li>
+        <li><a href="Rings&Earrings.html" class="active"> Bagues & Boucles</a> </li>
       </ul>
     </nav>
 </header>
@@ -29,16 +39,16 @@
 
     <!-- HERO -->  
     <section class="hero">    
-        <img src="ring/4.png" >
+        <img src="ring/9.png" >
         <img src="ring/5.png" >
-        <img src="ring/1.png" >  
+        <img src="ring/ring7.png" >  
     </section>
 
     <!-- CITATION -->
     <div class="citation">
         <span class="citation-ligne">——</span>
         <span class="citation-ornement">✦</span>
-        <p class="citation-texte">"Every piece tells a story of Moroccan heritage"</p>
+        <p class="citation-texte">"Chaque pièce raconte une histoire du patrimoine marocain"</p>
         <span class="citation-ornement">✦</span>
         <span class="citation-ligne">——</span>
     </div>
@@ -46,12 +56,15 @@
     <!-- BANDE -->
     <div class="bande">
         <div class="bande-contenu">
-            <span>✦ Handcrafted in Morocco</span>
-            <span>✦ Premium Quality Sets</span>
-            <span>✦ Timeless Elegance</span>
-            <span>✦ Handcrafted in Morocco</span>
-            <span>✦ Premium Quality Sets</span>
-            <span>✦ Timeless Elegance</span>
+        <span>✦ Artisanat Marocain</span>
+        <span>✦ Livraison Gratuite</span>
+        <span>✦ Bijoux Authentiques</span>
+        <span>✦ Artisanat Marocain</span>
+        <span>✦ Livraison Gratuite</span>
+        <span>✦ Bijoux Authentiques</span>
+        <span>✦ Artisanat Marocain</span>
+        <span>✦ Livraison Gratuite</span>
+        <span>✦ Bijoux Authentiques</span>
         </div>
     </div>
 
@@ -70,21 +83,13 @@
       <span class="titre-ligne">——</span>
     </div>
 
-
-    
-    <div class="filter-buttons">
-        <button class="filter-btn" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="ring">Rings</button> 
-        <button class="filter-btn" data-filter="earring">Earrings</button>
-    </div>
-
     <div class="grille">
 
       
-        <div class="carte earring" onclick="ouvrirModal('ring/Ring12.png', 'Duo Royal', '12 000 MAD', 'A majestic jewelry set that combines timeless heritage with a touch of modern luxury.', 'Argent & Corail')">
+        <div class="carte earring" onclick="ouvrirModal('ring/Ring12.png', 'Duo Royal', '12 000 MAD', 'Un ensemble de bijoux majestueux qui allie un héritage intemporel à une touche de luxe moderne.', 'Argent & Corail')">
         <div class="carte-img-wrapper">
           <img src="ring/Ring12.png">
-          <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Add to Cart</button>
+          <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Ajouter au panier</button>
         </div>
         <div class="carte-info">
           <p class="carte-nom">Duo Royal</p>
@@ -94,10 +99,10 @@
       
 
       
-    <div class="carte ring" onclick="ouvrirModal('ring/Ring11.png', 'Duo Patrimoine', '57 000 MAD', ' Inspired by authentic Moroccan craftsmanship, this set reflects elegance and cultural depth.', 'Argent & Corail')">
+    <div class="carte ring" onclick="ouvrirModal('ring/Ring11.png', 'Duo Patrimoine', '57 000 MAD', 'Inspiré par l authentique artisanat marocain cet ensemble reflète l élégance et la richesse culturelle.', 'Argent & Corail')">
         <div class="carte-img-wrapper">
           <img src="ring/Ring11.png">
-          <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Add to Cart</button>
+          <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Ajouter au panier</button>
         </div>
         <div class="carte-info">
           <p class="carte-nom">Duo Patrimoine</p>
@@ -107,10 +112,10 @@
       
 
       
-        <div class="carte earring"  onclick="ouvrirModal('ring/Ring13.png', 'Duo Essentiel', '35 000 MAD', 'A delicate and sophisticated duo designed for the modern woman who values tradition.', 'Argent & Corail')">
+        <div class="carte earring"  onclick="ouvrirModal('ring/Ring13.png', 'Duo Essentiel', '35 000 MAD', 'Un duo délicat et sophistiqué conçu pour la femme moderne attachée à la tradition.', 'Argent & Corail')">
         <div class="carte-img-wrapper">
           <img src="ring/Ring13.png">
-          <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Add to Cart</button>
+          <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Ajouter au panier</button>
         </div>
         <div class="carte-info">
           <p class="carte-nom">Duo Essentiel</p>
@@ -134,21 +139,13 @@
       <span class="titre-ligne">——</span>
     </div>
 
-
-
-    <div class="filter-buttons">
-        <button class="filter-btn" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="ring">Rings</button> 
-        <button class="filter-btn" data-filter="earring">Earrings</button>
-    </div>
-    
     <div class="grille">
 
       
-        <div class="carte earring"   onclick="ouvrirModal('ring/Earr3.png', 'Boucles Tradition', '10 000 MAD', ' Classic drop earrings featuring intricate filigree patterns inspired by Maghreb artistry.', 'Argent & Corail')">
+        <div class="carte earring"   onclick="ouvrirModal('ring/Earr3.png', 'Boucles Tradition', '10 000 MAD', ' Boucles d oreilles pendantes classiques ornées de motifs en filigrane complexes inspirés de l art maghrébin.', 'Argent & Corail')">
         <div class="carte-img-wrapper">
           <img src="ring/Earr3.png">
-          <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Add to Cart</button>
+          <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Ajouter au panier</button>
         </div>
         <div class="carte-info">
           <p class="carte-nom">Boucles Tradition</p>
@@ -158,10 +155,10 @@
     
 
      
-        <div class="carte ring"  onclick="ouvrirModal('ring/Ring10.png', 'Bague Heritage', '6 000 MAD', 'A stunning statement ring with a vibrant green centerpiece, capturing the essence of heritage.', 'Argent & Corail')">
+        <div class="carte ring"  onclick="ouvrirModal('ring/Ring10.png', 'Bague Heritage', '6 000 MAD', 'Une bague remarquable ornée d un centre vert éclatant, qui capture l essence même de l héritage.', 'Argent & Corail')">
         <div class="carte-img-wrapper">
           <img src="ring/Ring10.png">
-          <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Add to Cart</button>
+          <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Ajouter au panier</button>
         </div>
         <div class="carte-info">
           <p class="carte-nom">Bague Heritage</p>
@@ -171,10 +168,10 @@
       
 
       
-        <div class="carte earring"  onclick="ouvrirModal('ring/Earr2.png', 'Boucles Classic', '12 000 MAD', 'Elegant gold earrings with a traditional silhouette, perfect for grand occasions.', 'Argent & Corail')">
+        <div class="carte earring"  onclick="ouvrirModal('ring/Earr2.png', 'Boucles Classic', '12 000 MAD', 'Élégantes boucles d oreilles en or à la silhouette traditionnelle, parfaites pour les grandes occasions.', 'Argent & Corail')">
         <div class="carte-img-wrapper">
           <img src="ring/Earr2.png">
-          <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Add to Cart</button>
+          <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Ajouter au panier</button>
         </div>
         <div class="carte-info">
           <p class="carte-nom">Boucles Classic</p>
@@ -199,20 +196,12 @@
     </div>
 
 
-
-    
-    <div class="filter-buttons">
-        <button class="filter-btn" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="ring">Rings</button> 
-        <button class="filter-btn" data-filter="earring">Earrings</button>
-    </div>
-    
     <div class="grille">
 
-        <div class="carte earring"   onclick="ouvrirModal('ring/Earr7.png', 'Modern', '4800 MAD', 'Chic and lightweight gold earrings designed for a stylish and contemporary daily look.', 'Argent & Corail')">
+        <div class="carte earring"   onclick="ouvrirModal('ring/Earr7.png', 'Modern', '4800 MAD', 'Boucles d oreilles en or chics et légères, conçues pour un look quotidien élégant et contemporain.', 'Argent & Corail')">
         <div class="carte-img-wrapper">
            <img src="ring/Earr7.png">
-          <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Add to Cart</button>
+          <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Ajouter au panier</button>
         </div>
         <div class="carte-info">
           <p class="carte-nom">Modern </p>
@@ -223,10 +212,10 @@
       
 
       
-        <div class="carte ring"  onclick="ouvrirModal('ring/Rings15.png', 'Elegant', '2300 MAD', 'A beautifully twisted gold band encrusted with fine stones for a touch of everyday sparkle.', 'Argent & Corail')">
+        <div class="carte ring"  onclick="ouvrirModal('ring/Rings15.png', 'Elegant', '2300 MAD', 'Une magnifique bague en or torsadée, incrustée de pierres fines pour une touche d éclat au quotidien.', 'Argent & Corail')">
         <div class="carte-img-wrapper">
           <img src="ring/Rings15.png">
-          <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Add to Cart</button>
+          <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Ajouter au panier</button>
         </div>
         <div class="carte-info" >
           <p class="carte-nom">Elegant</p>
@@ -236,10 +225,10 @@
       
 
       
-        <div class="carte earring" onclick="ouvrirModal('ring/Earr8.png', 'Premium', '3000 MAD', ' Exquisite teardrop earrings with detailed openwork, offering a high-end luxury feel.', 'Argent & Corail')">
+        <div class="carte earring" onclick="ouvrirModal('ring/Earr8.png', 'Premium', '3000 MAD', ' Boucles d oreilles exquises en forme de larme, ornées de délicates découpes ajourées, pour une sensation de luxe haut de gamme.', 'Argent & Corail')">
         <div class="carte-img-wrapper">
            <img src="ring/Earr8.png">
-          <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Add to Cart</button>
+          <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Ajouter au panier</button>
         </div>
         <div class="carte-info">
           <p class="carte-nom">Premium </p>
@@ -265,23 +254,23 @@
     <div class="footer-col">
       <h3 class="footer-logo">Zina</h3>
       <p class="footer-desc">
-        Authentic Moroccan jewelry, handcrafted with love and tradition.
+        Bijoux marocains authentiques, fabriqués avec amour et tradition.
       </p>
     </div>
 
     <div class="footer-col">
-      <h4 class="footer-titre-col">Quick Links</h4>
+      <h4 class="footer-titre-col">Liens Rapides</h4>
       <ul class="footer-liens">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="home.html">Accueil</a></li>
         <li><a href="bracelets.html">Bracelets</a></li>
-        <li><a href="sets.html">Sets</a></li>
+        <li><a href="sets.html">Collections</a></li>
         <li><a href="mdamma.html">Mdamma & Chmar</a></li>
-        <li><a href="rings.html">Rings & Earrings</a></li>
+        <li><a href="Rings&Earrings.html">Bagues & Boucles</a></li>
       </ul>
     </div>
 
     <div class="footer-col">
-      <h4 class="footer-titre-col">Follow Us</h4>
+      <h4 class="footer-titre-col">Suivez-Nous</h4>
       <ul class="footer-liens">
         <li><a href="#">Instagram @Zina_jewelery</a></li>
         <li><a href="#">Facebook @Zina_jewelery</a></li>
@@ -294,7 +283,7 @@
   <div class="footer-ligne"></div>
 
   <div class="footer-copyright">
-    <p>✦ © 2026 Zina — All rights reserved ✦</p>
+    <p>✦ © 2026 Zina — Tous droits réservés ✦</p>
   </div>
 </footer>
 
@@ -323,18 +312,18 @@
       <div class="modal-info">
         <h3 id="modal-nom"></h3>
         <div>
-          <p class="modal-label">Price</p>
+          <p class="modal-label">Prix</p>
           <p id="modal-prix"></p>
         </div>
         <div class="modal-about">
           <span></span>
-          ✦ About this Jewel ✦
+          ✦ À propos de ce bijou ✦
           <span></span>
         </div>
         <p id="modal-desc"></p>
         <p id="modal-matiere"></p>
         <!-- onclick appelle afficherNotification() -->
-        <button class="modal-btn" onclick="afficherNotification()">Add to Cart</button>
+        <button class="modal-btn" onclick="afficherNotification()">Ajouter au panier</button>
       </div>
 
     </div>
@@ -351,111 +340,8 @@
        apparaît quand on clique sur Ajouter au panier
   ============================================ -->
   <div class="notification" id="notification">
-    <span>✦ Added to cart successfully ✦</span>
+    <span>✦ Ajouté au panier avec succès ✦</span>
   </div>
-  <!-- ============================================
-       JAVASCRIPT
-  ============================================ -->
 
-
-<script>
-
-   /* ============================================
-       ouvrirModal() - appelée au clic sur une carte
-       reçoit 5 paramètres :
-       - image : nom du fichier image
-       - nom : nom du bracelet
-       - prix : prix en MAD
-       - description : texte descriptif
-       - matiere : matière du bracelet
-    ============================================ */
-    function ouvrirModal(image, nom, prix, description, matiere) {
-
-      /* remplace le src de l'image par le chemin complet */
-      document.getElementById('modal-img').src = image;
-
-      /* remplace le texte de chaque élément */
-      document.getElementById('modal-nom').textContent = nom;
-      document.getElementById('modal-prix').textContent = prix;
-      document.getElementById('modal-desc').textContent = description;
-      document.getElementById('modal-matiere').textContent = 'Matière : ' + matiere;
-
-      /* ajoute la classe "actif" pour afficher le modal */
-      document.getElementById('modal').classList.add('actif');
-    }
-
-    /* ============================================
-       fermerModal() - ferme le modal
-       supprime la classe "actif" pour cacher le modal
-    ============================================ */
-    function fermerModal() {
-      document.getElementById('modal').classList.remove('actif');
-    }
-
-     /* ============================================
-       afficherNotification() - affiche la notification
-       pendant 3 secondes puis la cache automatiquement
-    ============================================ */
-    function afficherNotification() {
-      const notif = document.getElementById('notification');
-
-      /* affiche la notification */
-      notif.classList.add('visible');
-
-      /* cache automatiquement après 3 secondes */
-      setTimeout(function() {
-        notif.classList.remove('visible');
-      }, 3000); /* 3000 millisecondes = 3 secondes */
-    }
-/* ============================================ */
-  document.addEventListener('DOMContentLoaded', () => {
-    const addButtons = document.querySelectorAll('.carte-btn');
-
-    addButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            
-            e.preventDefault();
-
-            const productCard = e.target.closest('.carte');
-            const productName = productCard.querySelector('.carte-nom').innerText;
-            const productPrice = productCard.querySelector('.carte-prix').innerText;
-
-            alert("Added: " + productName + "\nPrice " + productPrice);
-        });
-    });
-});
-
-/* ============================================ */
-const themeBtn = document.createElement('button');
-themeBtn.innerText = "🌙 / ☀️";
-themeBtn.style.cssText = "position:fixed; bottom:20px; right:20px; padding:10px; border-radius:50%; cursor:pointer;";
-document.body.appendChild(themeBtn);
-
-themeBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark-theme');
-});
-
-
-/* ============================================ */
-const filterButtons = document.querySelectorAll('.filter-btn');
-const cards = document.querySelectorAll('.carte');
-
-filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const filterValue = button.getAttribute('data-filter');
-
-        cards.forEach(card => {
-            if (filterValue === 'all') {
-                card.style.display = 'block'; // Shows all
-            } else if (card.classList.contains(filterValue)) {
-                card.style.display = 'block'; // Show matching
-            } else {
-                card.style.display = 'none'; // Hide the rest
-            }
-        });
-    });
-});
-
-</script>
 </body>
 </html>

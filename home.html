@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zina - Home</title>
+  <title>Zina - Accueil</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Amiri&display=swap" rel="stylesheet">
@@ -27,11 +27,11 @@
     <nav>
       <ul>
         <!-- class="active" sur Accueil car on est sur cette page -->
-        <li><a href="home.html" class="active">Home</a></li>
+        <li><a href="home.html" class="active">Accueil</a></li>
         <li><a href="bracelets.html">Bracelets</a></li>
-        <li><a href="sets.html">Sets</a></li>
+        <li><a href="sets.html">Collections</a></li>
         <li><a href="mdamma.html">Mdamma & Chmar</a></li>
-        <li><a href="Rings&Earrings.html">Rings & Earrings</a></li>
+        <li><a href="Rings&Earrings.html">Bagues & Boucles</a></li>
       </ul>
     </nav>
   
@@ -39,7 +39,7 @@
 
 
     <div class="header-icons">
-        <a href="#" class="icon-link">
+        <a href="#" class="icon-link" id="userIcon">
          <svg class="header_nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
             <circle cx="12" cy="7" r="4"></circle>
@@ -62,6 +62,22 @@
         </a>
     </div>
   </header>
+
+
+
+
+  <!-- Login Modal -->
+<div id="loginModal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.5); backdrop-filter:blur(5px);">
+  <div style="background-color:#fff; margin:10% auto; padding:30px; width:320px; border-radius:10px; text-align:center; position:relative; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    <span id="closeBtn" style="position:absolute; right:15px; top:10px; font-size:24px; cursor:pointer;">&times;</span>
+    <h2 style="color:#4a3728; margin-bottom:20px;">Connexion</h2>
+    <form id="loginForm" style="display:flex; flex-direction:column; gap:15px;">
+      <input type="email" placeholder="Email" required style="padding:10px; border:1px solid #ddd; border-radius:5px;">
+      <input type="password" placeholder="Mot de passe" required style="padding:10px; border:1px solid #ddd; border-radius:5px;">
+      <button type="submit" style="background-color:#4a3728; color:white; padding:12px; border:none; border-radius:5px; cursor:pointer;">Se connecter</button>
+    </form>
+  </div>
+</div>
   <main>
 
  <!-- ============================================
@@ -79,7 +95,7 @@
     <h1 class="hero-accueil-titre">Zina</h1>
     <div class="hero-accueil-ligne"></div>
     <p class="hero-accueil-sous-titre">Bijoux Marocains Traditionnels</p>
-    <a href="bracelets.html" class="hero-accueil-btn">Découvrir nos collections</a>
+    <a href="#Nos-collections" class="hero-accueil-btn">Découvrir nos collections</a>
   </div>
 
 </section>
@@ -161,7 +177,7 @@
     <!-- ============================================
          NOS COLLECTIONS - 4 cartes cliquables
     ============================================ -->
-    <section class="collections">
+    <section class="collections" id="Nos-collections">
 
       <div class="collections-titre">
         <span class="histoire-ligne">——</span>
@@ -242,11 +258,11 @@
       <div class="footer-col">
         <h4 class="footer-titre-col">Liens Rapides</h4>
         <ul class="footer-liens">
-          <li><a href="index.html">Accueil</a></li>
+          <li><a href="home.html">Accueil</a></li>
           <li><a href="bracelets.html">Bracelets</a></li>
           <li><a href="sets.html">Collections</a></li>
           <li><a href="mdamma.html">Mdamma & Chmar</a></li>
-          <li><a href="rings.html">Bagues & Boucles</a></li>
+          <li><a href="Rings&Earrings.html">Bagues & Boucles</a></li>
         </ul>
       </div>
 
@@ -295,6 +311,35 @@
       }
     });
 
+    // 1. Définition des éléments
+const userIcon = document.getElementById("userIcon");
+const loginModal = document.getElementById("loginModal");
+const closeBtn = document.getElementById("closeBtn");
+
+// 2. Ouvrez la fenêtre modale et cliquez sur l'icône Utilisateur
+userIcon.addEventListener("click", function(e) {
+    e.preventDefault(); // Pour que la page ne se rafraîchisse pas
+    loginModal.style.display = "block";
+});
+
+  // 3. Fermez la fenêtre modale en appuyant sur (X)
+    closeBtn.addEventListener("click", function() {
+    loginModal.style.display = "none";
+});
+
+   //4. Fermez la fenêtre modale en cliquant en dehors de la zone.
+window.addEventListener("click", function(e) {
+    if (e.target == loginModal) {
+        loginModal.style.display = "none";
+    }
+});
+
+  // 5. Tests de formulaire
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("« Connexion réussie à la boutique Zina!»");
+    loginModal.style.display = "none";
+});
   </script>
 
 </body>

@@ -585,6 +585,14 @@ footer {
 }
 
 /* ============================================
+  For smoothing the button "découvrir nos collections" 
+============================================ */
+
+html{
+  scroll-behavior: smooth;
+}
+
+/* ============================================
    BOUTON SCROLL TO TOP
 ============================================ */
 .scroll-top {
