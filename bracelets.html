@@ -16,7 +16,7 @@
   ============================================ -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Amiri&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <script src="JSShared.js"></script>
+  
 </head>
 
 <body>
@@ -221,7 +221,7 @@
           <div class="carte" onclick="ouvrirModal('picsUsed/tanbalt.jpg', 'Bracelet Amazigh Tanbalt', '4500 MAD', 'Tanbalt — bracelet berbère ancien, fabriqué en argent massif avec des motifs géométriques amazighs.', 'Argent Massif')">
             <div class="carte-img-wrapper">
               <img src="picsUsed/tanbalt.jpg" alt="Bracelet amazigh 2">
-              <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Ajouter au panier</button>
+              <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()" >Ajouter au panier</button>
             </div>
             <div class="carte-info">
               <p class="carte-nom">Bracelet Amazigh Tanbalt</p>
@@ -340,6 +340,6 @@
   <div class="notification" id="notification">
     <span>✦ Ajouté au panier avec succès ✦</span>
   </div>
-
+  <script src="JSShared.js"></script>
 </body>
 </html>

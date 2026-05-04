@@ -21,11 +21,11 @@
 
   <nav>
     <ul>
-      <li><a href="home.html">Home</a></li>
+      <li><a href="home.html">ACCUEIL</a></li>
       <li><a href="bracelets.html">Bracelets</a></li>
-      <li><a href="sets.html">Sets</a></li>
-      <li><a href="mdamma.html"  class="active">Mdamma & Chmar</a></li>
-      <li><a href="Rings&Earrings.html">Rings & Earrings</a></li>
+      <li><a href="sets.html">COLLECTIONS</a></li>
+      <li><a href="mdamma.html"  class="active">MDAMMA & CHMAR</a></li>
+      <li><a href="Rings&Earrings.html">BAGUES & BOUCLES</a></li>
     </ul>
   </nav>
 </header>
@@ -34,16 +34,16 @@
 
 <!-- HERO -->
 <section class="hero">
-  <img src="image/brooch1.jfif" alt="Moroccan Brooch">
-  <img src="image/mdamma1.jfif" alt="Moroccan Mdamma">
-  <img src="image/chmar1.jfif" alt="Moroccan Chmar">
+  <img src="image/photo2.jfif" alt="Broche Marocaine">
+  <img src="image/photo1.jfif" alt="Mdamma Marocaine">
+  <img src="image/chmar1.jfif" alt="Chmar Marocain">
 </section>
 
 <!-- CITATION -->
 <div class="citation">
   <span class="citation-ligne">——</span>
   <span class="citation-ornement">✦</span>
-  <p class="citation-texte">"Crafted with soul, worn with pride"</p>
+  <p class="citation-texte">"Fabriqué avec passion, porté avec fierté"</p>
   <span class="citation-ornement">✦</span>
   <span class="citation-ligne">——</span>
 </div>
@@ -51,12 +51,12 @@
 <!-- BANDE -->
 <div class="bande">
   <div class="bande-contenu">
-    <span>✦ Pure Elegance</span>
-    <span>✦ Cultural Style</span>
-    <span>✦ Chic Tradition</span>
-    <span>✦ Pure Elegance</span>
-    <span>✦ Cultural Style</span>
-    <span>✦ Chic Tradition</span>
+    <span>✦ Élégance Authentique</span>
+    <span>✦ Style Unique</span>
+    <span>✦ Pure Tradition</span>
+    <span>✦ Élégance Authentique</span>
+    <span>✦ Style Unique</span>
+    <span>✦ Pure Tradition</span>
   </div>
 </div>
 
@@ -68,54 +68,54 @@
     <div class="categorie-titre">
       <span class="titre-ligne">——</span>
       <span class="titre-ornement">✦</span>
-      <h2>Royal Brooch</h2>
+      <h2>Broche Royale</h2>
       <span class="titre-ornement">✦</span>
       <span class="titre-ligne">——</span>
     </div>
 
     <div class="grille">
 
-      <div class="carte">
+      <div class="carte" onclick="ouvrirModal('image/brooch2.jfif','Broche De Luxe','20 000 MAD','Broche imposante au style royal, ornée de pendentifs délicats et de pierres vertes, idéale pour les grandes occasions.','Alliage doré, pierres vertes (type émeraude), strass, éléments suspendus, finition artisanale.')">
         <div class="carte-img-wrapper">
           <img src="image/brooch2.jfif">
-          <button class="carte-btn">Add to Cart</button>
+          <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">AJOUTER AU PANIER</button>
         </div>
         <div class="carte-info">
-          <p class="carte-nom">Luxury Brooch</p>
-          <p class="carte-prix">20000 MAD</p>
+          <p class="carte-nom">Broche De Luxe</p>
+          <p class="carte-prix">20 000 MAD</p>
         </div>
       </div>
 
-      <div class="carte">
+      <div class="carte" onclick="ouvrirModal('image/brooch3.jfif','Charme Vintage','25 000 MAD','Broche élégante au design symétrique, sublimée par une pierre rouge centrale pour un look raffiné et vintage.','Métal doré, pierre rouge (type rubis), strass blancs, travail en filigrane.')">
         <div class="carte-img-wrapper">
           <img src="image/brooch3.jfif">
-          <button class="carte-btn">Add to Cart</button>
+          <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">AJOUTER AU PANIER</button>
         </div>
         <div class="carte-info">
-          <p class="carte-nom">Vintage Charm</p>
-          <p class="carte-prix">25000 MAD</p>
+          <p class="carte-nom">Charme Vintage</p>
+          <p class="carte-prix">25 000 MAD</p>
         </div>
       </div>
 
-      <div class="carte">
+      <div class="carte" onclick="ouvrirModal('image/brooche4.jfif','Broche Artisanale','30 000 MAD','Broche chic avec chaînes décoratives et pierres sombres, parfaite pour un style moderne et sophistiqué.','Alliage doré, pierres noires/grises, strass, chaînes métalliques, finition artisanale.')">
         <div class="carte-img-wrapper">
           <img src="image/brooch4.jfif">
-          <button class="carte-btn">Add to Cart</button>
+          <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">AJOUTER AU PANIER</button>
         </div>
         <div class="carte-info">
-          <p class="carte-nom">Artisan Brooch</p>
-          <p class="carte-prix">30000 MAD</p>
+          <p class="carte-nom">Broche Artisanale</p>
+          <p class="carte-prix">30 000 MAD</p>
         </div>
       </div>
 
-      <div class="carte">
+      <div class="carte" onclick="ouvrirModal('image/brooch1.jfif','Beauté Légère','20 000 MAD','Broche traditionnelle au design harmonieux, décorée de pierres claires pour une touche lumineuse et élégante.','Métal doré, cristaux transparents, pierres décoratives(type rubis), finition faite main.')">
         <div class="carte-img-wrapper">
-          <img src="image/brooch5.jfif">
-          <button class="carte-btn">Add to Cart</button>
+          <img src="image/brooch1.jfif">
+          <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">AJOUTER AU PANIER</button>
         </div>
         <div class="carte-info">
-          <p class="carte-nom">Golden Brooch</p>
-          <p class="carte-prix">20000 MAD</p>
+          <p class="carte-nom">Beauté Légère</p>
+          <p class="carte-prix">20 000 MAD</p>
         </div>
       </div>
 
@@ -127,54 +127,54 @@
     <div class="categorie-titre">
       <span class="titre-ligne">——</span>
       <span class="titre-ornement">✦</span>
-      <h2>Royal Mdamma</h2>
+      <h2>Mdamma Royale</h2>
       <span class="titre-ornement">✦</span>
       <span class="titre-ligne">——</span>
     </div>
 
     <div class="grille">
 
-      <div class="carte">
+      <div class="carte" oncick="ouvrirModal('image/mdamma2.jfif','Reffinement Pur','700 000 MAD','Mdamma large au design riche et raffiné, avec une pierre centrale verte pour une allure royale.','Alliage doré, pierre verte (type émeraude), filigrane fin, finitions artisanales.')">
         <div class="carte-img-wrapper">
           <img src="image/mdamma2.jfif">
-          <button class="carte-btn">Add to Cart</button>
+          <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">AJOUTER AU PANIER</button>
         </div>
         <div class="carte-info">
-          <p class="carte-nom">Bridal Mdamma</p>
-          <p class="carte-prix">700000 MAD</p>
+          <p class="carte-nom">Reffinement Pur</p>
+          <p class="carte-prix">700 000 MAD</p>
         </div>
       </div>
 
-      <div class="carte">
+      <div class="carte" onclick="ouvrirModal('image/mdamma3.jfif','Tradition Dorée','350 000 MAD','Mdamma élégante composée de motifs circulaires, ornée de pierres rouges et vertes pour un style traditionnel luxueux.','Métal doré, pierres rouges (type rubis), pierres vertes, strass, travail en filigrane.')">
         <div class="carte-img-wrapper">
           <img src="image/mdamma3.jfif">
-          <button class="carte-btn">Add to Cart</button>
+          <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">AJOUTER AU PANIER</button>
         </div>
         <div class="carte-info">
-          <p class="carte-nom">Golden Mdamma</p>
-          <p class="carte-prix">350000 MAD</p>
+          <p class="carte-nom">Tradition Dorée</p>
+          <p class="carte-prix">350 000 MAD</p>
         </div>
       </div>
 
-      <div class="carte">
+      <div class="carte" onclick="ouvrirModal('image/mdamma4.jfif','Héritage Chic','450 000 MAD','Mdamma sophistiquée à motifs répétitifs, idéale pour sublimer une tenue de fête avec élégance.','Alliage doré, pierres vertes, strass, éléments décoratifs artisanaux.')">
         <div class="carte-img-wrapper">
           <img src="image/mdamma4.jfif">
-          <button class="carte-btn">Add to Cart</button>
+          <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">AJOUTER AU PANIER</button>
         </div>
         <div class="carte-info">
-          <p class="carte-nom">Heritage Mdamma</p>
-          <p class="carte-prix">450000 MAD</p>
+          <p class="carte-nom">Héritage Chic</p>
+          <p class="carte-prix">450 000 MAD</p>
         </div>
       </div>
 
-      <div class="carte">
+      <div class="carte" onclick="ouvrirModal('image/mdamma5.jfif','Éclat élégant','500 000 MAD','Mdamma traditionnelle au design finement travaillé, mettant en valeur des pierres colorées dans un style authentique.','Métal doré, pierres multicolores, strass, finitions faites à la main.')">
         <div class="carte-img-wrapper">
           <img src="image/mdamma5.jfif">
-          <button class="carte-btn">Add to Cart</button>
+          <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">AJOUTER AU PANIER</button>
         </div>
         <div class="carte-info">
-          <p class="carte-nom">Classic Mdamma</p>
-          <p class="carte-prix">500000 MAD</p>
+          <p class="carte-nom">Éclat élégant</p>
+          <p class="carte-prix">500 000 MAD</p>
         </div>
       </div>
 
@@ -193,47 +193,47 @@
 
     <div class="grille">
 
-      <div class="carte">
+      <div class="carte" onclick="ouvrirModal('image/chmar2.jfif','Chmar Moderne','180 000 MAD','Chmar moderne au design audacieux, avec pendentif central et détails suspendus pour un style élégant et contemporain.','Alliage doré, perles sombres, éléments filigranés, pendentifs métalliques, finition artisanale.')">
         <div class="carte-img-wrapper">
            <img src="image/chmar2.jfif">
-          <button class="carte-btn">Add to Cart</button>
+          <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">AJOUTER AU PANIER</button>
         </div>
         <div class="carte-info">
-          <p class="carte-nom">Modern Chmar</p>
-          <p class="carte-prix">180000 MAD</p>
+          <p class="carte-nom">Chmar Moderne</p>
+          <p class="carte-prix">180 000 MAD</p>
         </div>
       </div>
 
-      <div class="carte">
+      <div class="carte" onclick="ouvrirModal('image/chmar3.jfif','Chmar Élégant','160 000 MAD','Chmar raffiné avec médaillon central travaillé et chaînes décoratives, parfait pour une allure sophistiquée.','Métal doré, perles dorées, strass, filigrane fin, éléments suspendus.')">
         <div class="carte-img-wrapper">
           <img src="image/chmar3.jfif">
-          <button class="carte-btn">Add to Cart</button>
+          <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">AJOUTER AU PANIER</button>
         </div>
         <div class="carte-info">
-          <p class="carte-nom">Elegant Chmar</p>
-          <p class="carte-prix">160000 MAD</p>
+          <p class="carte-nom">Chmar Élégant</p>
+          <p class="carte-prix">160 000 MAD</p>
         </div>
       </div>
 
-      <div class="carte">
+      <div class="carte" onclick="oub=vrirModal('image/chmar4.jfif','Grâce Marocaine','200 000 MAD','Chmar léger et harmonieux, composé de perles et d’un motif central délicat pour une touche féminine.','Alliage argenté/doré clair, perles, éléments métalliques, finition artisanale.')">
         <div class="carte-img-wrapper">
            <img src="image/chmar4.jfif">
-          <button class="carte-btn">Add to Cart</button>
+          <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">AJOUTER AU PANIER</button>
         </div>
         <div class="carte-info">
-          <p class="carte-nom">Light Luxury</p>
-          <p class="carte-prix">200000 MAD</p>
+          <p class="carte-nom">Grâce Marocaine</p>
+          <p class="carte-prix">200 000 MAD</p>
         </div>
       </div>
 
-      <div class="carte">
+      <div class="carte" onclick="ouvrirModal('image/chmar5.jfif','Touche Féminine','190 000 MAD','Chmar traditionnel richement décoré, avec médaillon central orné de pierres colorées pour un style authentique marocain.','Métal doré, pierres rouges et décoratives, perles, travail en filigrane, finition faite main.')">
         <div class="carte-img-wrapper">
-           <img src="image/chmar5.jfif">
-          <button class="carte-btn">Add to Cart</button>
+          <img src="image/chmar5.jfif">
+          <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">AJOUTER AU PANIER</button>
         </div>
         <div class="carte-info">
-          <p class="carte-nom">Vintage Touch</p>
-          <p class="carte-prix">190000 MAD</p>
+          <p class="carte-nom">Touche Féminine</p>
+          <p class="carte-prix">190 000 MAD</p>
         </div>
       </div>
 
@@ -249,23 +249,23 @@
     <div class="footer-col">
       <h3 class="footer-logo">Zina</h3>
       <p class="footer-desc">
-        Authentic Moroccan jewelry, handcrafted with love and tradition.
+        Bijoux marocains authentiques, fabriqués avec amour et tradition.
       </p>
     </div>
 
     <div class="footer-col">
-      <h4 class="footer-titre-col">Quick Links</h4>
+      <h4 class="footer-titre-col">LIENS RAPIDES</h4>
       <ul class="footer-liens">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html">Accueil</a></li>
         <li><a href="bracelets.html">Bracelets</a></li>
-        <li><a href="sets.html">Sets</a></li>
+        <li><a href="sets.html">Collections</a></li>
         <li><a href="mdamma.html">Mdamma & Chmar</a></li>
-        <li><a href="rings.html">Rings & Earrings</a></li>
+        <li><a href="rings.html">Bagues & Boucles</a></li>
       </ul>
     </div>
 
     <div class="footer-col">
-      <h4 class="footer-titre-col">Follow Us</h4>
+      <h4 class="footer-titre-col">SUIVEZ-NOUS</h4>
       <ul class="footer-liens">
         <li><a href="#">Instagram @Zina_jewelery</a></li>
         <li><a href="#">Facebook @Zina_jewelery</a></li>
@@ -278,9 +278,61 @@
   <div class="footer-ligne"></div>
 
   <div class="footer-copyright">
-    <p>✦ © 2026 Zina — All rights reserved ✦</p>
+    <p>✦ © 2026 Zina — Tous droits réservés ✦</p>
   </div>
 </footer>
 
+<!-- ============================================
+       MODAL - fenêtre popup détail produit
+       clique sur le fond = ferme le modal
+       clique sur la boite = ne ferme pas (stopPropagation)
+  ============================================ -->
+  <div class="modal-fond" id="modal" onclick="fermerModal()">
+    <div class="modal-boite" onclick="event.stopPropagation()">
+
+      <!-- bouton fermer en haut à droite -->
+      <button class="modal-fermer" onclick="fermerModal()">✕</button>
+
+      <!-- image du produit - src rempli par JavaScript -->
+      <div class="modal-img-wrapper">
+        <img id="modal-img" src="" alt="produit">
+      </div>
+
+      <!-- infos du produit - contenu rempli par JavaScript -->
+      <div class="modal-info">
+        <h3 id="modal-nom"></h3>
+        <div>
+          <p class="modal-label">Prix</p>
+          <p id="modal-prix"></p>
+        </div>
+        <div class="modal-about">
+          <span></span>
+          ✦ À propos de ce bijou ✦
+          <span></span>
+        </div>
+        <p id="modal-desc"></p>
+        <p id="modal-matiere"></p>
+        <!-- onclick appelle afficherNotification() -->
+        <button class="modal-btn" onclick="afficherNotification()">Ajouter au panier</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================
+       BOUTON SCROLL TO TOP
+       apparaît quand on descend de 300px
+  ============================================ -->
+  <button class="scroll-top" id="scrollTop" onclick="allerEnHaut()">↑</button>
+
+  <!-- ============================================
+       NOTIFICATION AJOUT AU PANIER
+       apparaît quand on clique sur Ajouter au panier
+  ============================================ -->
+  <div class="notification" id="notification">
+    <span>✦ Ajouté au panier avec succès ✦</span>
+  </div>
+
+<script src="JSShared.js"></script>
 </body>
 </html>
