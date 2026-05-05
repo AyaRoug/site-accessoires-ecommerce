@@ -1,29 +1,16 @@
 <!DOCTYPE html>
-<!-- langue de la page définie en français -->
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <!-- permet à la page de s'adapter à la taille de l'écran -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zina - Bracelets</title>
-
-  <!-- ============================================
-       GOOGLE FONTS
-       on charge deux polices depuis internet :
-       - Playfair Display : utilisée pour le logo "Zina" et les titres luxe
-       - Amiri : utilisée pour les textes arabesques et citations
-       doit être AVANT le style pour que les polices soient disponibles
-  ============================================ -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Amiri&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  
 </head>
 
 <body>
 
-  <!-- ============================================
-       HEADER - barre de navigation en haut
-  ============================================ -->
+  <!-- HEADER -->
   <header>
     <div class="logo">
       <h1>Zina</h1>
@@ -31,29 +18,60 @@
     <nav>
       <ul>
         <li><a href="home.html">Accueil</a></li>
-        <!-- class="active" souligne le lien de la page actuelle -->
         <li><a href="bracelets.html" class="active">Bracelets</a></li>
         <li><a href="sets.html">Collections</a></li>
         <li><a href="mdamma.html">Mdamma & Chmar</a></li>
         <li><a href="Rings&Earrings.html">Bagues & Boucles</a></li>
       </ul>
     </nav>
+
+    <!-- icônes header -->
+    <div class="header-icons">
+
+      <!-- icône profil -->
+
+
+      <!-- icône panier -->
+      <div class="header-icones">
+        <button class="panier-icone" onclick="togglePanier()">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.5">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 01-8 0"/>
+          </svg>
+          <span class="panier-badge" id="panier-badge" style="display:none">0</span>
+        </button>
+      </div>
+
+      <!-- icône recherche -->
+
+    </div>
   </header>
 
+  <!-- LOGIN MODAL -->
+  <div id="loginModal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.5); backdrop-filter:blur(5px);">
+    <div style="background-color:#fff; margin:10% auto; padding:30px; width:320px; border-radius:10px; text-align:center; position:relative; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+      <span id="closeBtn" style="position:absolute; right:15px; top:10px; font-size:24px; cursor:pointer;">&times;</span>
+      <h2 style="color:#4a3728; margin-bottom:20px;">Connexion</h2>
+      <form id="loginForm" style="display:flex; flex-direction:column; gap:15px;">
+        <input type="email" placeholder="Email" required style="padding:10px; border:1px solid #ddd; border-radius:5px;">
+        <input type="password" placeholder="Mot de passe" required style="padding:10px; border:1px solid #ddd; border-radius:5px;">
+        <button type="submit" style="background-color:#4a3728; color:white; padding:12px; border:none; border-radius:5px; cursor:pointer;">Se connecter</button>
+      </form>
+    </div>
+  </div>
+
   <main>
-    <!-- ============================================
-         HERO - les 3 images côte à côte en bannière
-    ============================================ -->
+
+    <!-- HERO -->
     <section class="hero">
       <img src="picsUsed/dblij1.jpg" alt="Bracelets dorés">
       <img src="picsUsed/Rafinity.jpg" alt="Bracelet émeraude">
       <img src="picsUsed/amazigh.jpg" alt="Bracelet coloré">
     </section>
 
-    <!-- ============================================
-         CITATION - texte élégant sous le hero
-         structure : —— ✦ texte ✦ ——
-    ============================================ -->
+    <!-- CITATION -->
     <div class="citation">
       <span class="citation-ligne">——</span>
       <span class="citation-ornement">✦</span>
@@ -62,11 +80,7 @@
       <span class="citation-ligne">——</span>
     </div>
 
-    <!-- ============================================
-         BANDE DÉFILANTE - texte animé automatiquement
-         le texte est répété 3 fois pour que la bande
-         ne soit jamais vide pendant le défilement
-    ============================================ -->
+    <!-- BANDE DÉFILANTE -->
     <div class="bande">
       <div class="bande-contenu">
         <span>✦ Artisanat Marocain</span>
@@ -81,14 +95,10 @@
       </div>
     </div>
 
-    <!-- ============================================
-         SECTION PRODUITS - grille de 3 catégories
-    ============================================ -->
+    <!-- SECTION PRODUITS -->
     <section class="produits">
 
-      <!-- ==================
-           CATEGORIE 1 - Colorés
-      =================== -->
+      <!-- CATEGORIE 1 - Colorés -->
       <div class="categorie">
         <div class="categorie-titre">
           <span class="titre-ligne">——</span>
@@ -99,13 +109,12 @@
         </div>
         <div class="grille">
 
-          <!-- carte 1 : onclick appelle ouvrirModal() avec
-               image, nom, prix, description, matière -->
+          <!-- carte 1 -->
           <div class="carte" onclick="ouvrirModal('picsUsed/dblijzrak.jpg', 'Bracelet Coloré', '100 000 MAD', 'Bracelet marocain traditionnel en or, orné de pierres colorées, fabriqué à la main par des artisans marocains.', 'Or 18K & Saphir')">
             <div class="carte-img-wrapper">
               <img src="picsUsed/dblijzrak.jpg" alt="Bracelet doré coloré">
-              <!-- bouton caché qui apparaît au hover via CSS -->
-              <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Ajouter au panier</button>
+              <!-- ajouterAuPanier reçoit image, nom, prix -->
+              <button class="carte-btn" onclick="event.stopPropagation(); ajouterAuPanier('picsUsed/dblijzrak.jpg', 'Bracelet Coloré', '100 000 MAD')">Ajouter au panier</button>
             </div>
             <div class="carte-info">
               <p class="carte-nom">Bracelet Coloré</p>
@@ -114,10 +123,10 @@
           </div>
 
           <!-- carte 2 -->
-          <div class="carte" onclick="ouvrirModal('picsUsed/Rafinity.jpg', 'Bracelet Coloré', '50 000 MAD', 'Bracelet raffiné aux couleurs vives, inspiré des traditions berbères du Maroc.', 'Or 18K & Saphir')">
+          <div class="carte" onclick="ouvrirModal('picsUsed/Rafinity.jpg', 'Bracelet Coloré Rafinity', '50 000 MAD', 'Bracelet raffiné aux couleurs vives, inspiré des traditions berbères du Maroc.', 'Or 18K & Saphir')">
             <div class="carte-img-wrapper">
               <img src="picsUsed/Rafinity.jpg" alt="Bracelet doré coloré">
-              <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Ajouter au panier</button>
+              <button class="carte-btn" onclick="event.stopPropagation(); ajouterAuPanier('picsUsed/Rafinity.jpg', 'Bracelet Coloré Rafinity', '50 000 MAD')">Ajouter au panier</button>
             </div>
             <div class="carte-info">
               <p class="carte-nom">Bracelet Coloré</p>
@@ -126,10 +135,10 @@
           </div>
 
           <!-- carte 3 -->
-          <div class="carte" onclick="ouvrirModal('picsUsed/dblij1.jpg', 'Bracelet Coloré', '70 000 MAD', 'Bracelet dblij coloré, pièce unique travaillée à la main avec des motifs floraux traditionnels.', 'Or 18K & Saphir')">
+          <div class="carte" onclick="ouvrirModal('picsUsed/dblij1.jpg', 'Bracelet Coloré Dblij', '70 000 MAD', 'Bracelet dblij coloré, pièce unique travaillée à la main avec des motifs floraux traditionnels.', 'Or 18K & Saphir')">
             <div class="carte-img-wrapper">
               <img src="picsUsed/dblij1.jpg" alt="Bracelet coloré">
-              <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Ajouter au panier</button>
+              <button class="carte-btn" onclick="event.stopPropagation(); ajouterAuPanier('picsUsed/dblij1.jpg', 'Bracelet Coloré Dblij', '70 000 MAD')">Ajouter au panier</button>
             </div>
             <div class="carte-info">
               <p class="carte-nom">Bracelet Coloré</p>
@@ -140,9 +149,7 @@
         </div>
       </div>
 
-      <!-- ==================
-           CATEGORIE 2 - Simples
-      =================== -->
+      <!-- CATEGORIE 2 - Simples -->
       <div class="categorie">
         <div class="categorie-titre">
           <span class="titre-ligne">——</span>
@@ -154,10 +161,10 @@
         <div class="grille">
 
           <!-- carte 4 -->
-          <div class="carte" onclick="ouvrirModal('picsUsed/dblijsfar.jpg', 'Bracelet Simple', '60 000 MAD', 'Bracelet simple en or jaune, élégant et discret, parfait pour toutes les occasions.', 'Or 18K')">
+          <div class="carte" onclick="ouvrirModal('picsUsed/dblijsfar.jpg', 'Bracelet Simple Sfar', '60 000 MAD', 'Bracelet simple en or jaune, élégant et discret, parfait pour toutes les occasions.', 'Or 18K')">
             <div class="carte-img-wrapper">
               <img src="picsUsed/dblijsfar.jpg" alt="Bracelet simple 1">
-              <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Ajouter au panier</button>
+              <button class="carte-btn" onclick="event.stopPropagation(); ajouterAuPanier('picsUsed/dblijsfar.jpg', 'Bracelet Simple Sfar', '60 000 MAD')">Ajouter au panier</button>
             </div>
             <div class="carte-info">
               <p class="carte-nom">Bracelet Simple</p>
@@ -166,10 +173,10 @@
           </div>
 
           <!-- carte 5 -->
-          <div class="carte" onclick="ouvrirModal('picsUsed/DZ.jpg', 'Bracelet Simple', '40 000 MAD', 'Bracelet fin et raffiné, inspiré du style algéro-marocain traditionnel.', 'Or 18K')">
+          <div class="carte" onclick="ouvrirModal('picsUsed/DZ.jpg', 'Bracelet Simple DZ', '40 000 MAD', 'Bracelet fin et raffiné, inspiré du style algéro-marocain traditionnel.', 'Or 18K')">
             <div class="carte-img-wrapper">
               <img src="picsUsed/DZ.jpg" alt="Bracelet simple 2">
-              <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Ajouter au panier</button>
+              <button class="carte-btn" onclick="event.stopPropagation(); ajouterAuPanier('picsUsed/DZ.jpg', 'Bracelet Simple DZ', '40 000 MAD')">Ajouter au panier</button>
             </div>
             <div class="carte-info">
               <p class="carte-nom">Bracelet Simple</p>
@@ -178,10 +185,10 @@
           </div>
 
           <!-- carte 6 -->
-          <div class="carte" onclick="ouvrirModal('picsUsed/dblijsimple.jpg', 'Bracelet Simple', '35 000 MAD', 'Bracelet dblij simple, pureté et élégance, fabriqué en or massif.', 'Or 18K')">
+          <div class="carte" onclick="ouvrirModal('picsUsed/dblijsimple.jpg', 'Bracelet Simple Or', '35 000 MAD', 'Bracelet dblij simple, pureté et élégance, fabriqué en or massif.', 'Or 18K')">
             <div class="carte-img-wrapper">
               <img src="picsUsed/dblijsimple.jpg" alt="Bracelet simple 3">
-              <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Ajouter au panier</button>
+              <button class="carte-btn" onclick="event.stopPropagation(); ajouterAuPanier('picsUsed/dblijsimple.jpg', 'Bracelet Simple Or', '35 000 MAD')">Ajouter au panier</button>
             </div>
             <div class="carte-info">
               <p class="carte-nom">Bracelet Simple</p>
@@ -192,9 +199,7 @@
         </div>
       </div>
 
-      <!-- ==================
-           CATEGORIE 3 - Amazigh
-      =================== -->
+      <!-- CATEGORIE 3 - Amazigh -->
       <div class="categorie">
         <div class="categorie-titre">
           <span class="titre-ligne">——</span>
@@ -206,10 +211,10 @@
         <div class="grille">
 
           <!-- carte 7 -->
-          <div class="carte" onclick="ouvrirModal('picsUsed/amazigh.jpg', 'Bracelet Amazigh', '3000 MAD', 'Bracelet amazigh authentique, symbole de la culture berbère, orné de gravures traditionnelles.', 'Argent & Corail')">
+          <div class="carte" onclick="ouvrirModal('picsUsed/amazigh.jpg', 'Bracelet Amazigh', '3 000 MAD', 'Bracelet amazigh authentique, symbole de la culture berbère, orné de gravures traditionnelles.', 'Argent & Corail')">
             <div class="carte-img-wrapper">
               <img src="picsUsed/amazigh.jpg" alt="Bracelet amazigh 1">
-              <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Ajouter au panier</button>
+              <button class="carte-btn" onclick="event.stopPropagation(); ajouterAuPanier('picsUsed/amazigh.jpg', 'Bracelet Amazigh', '3 000 MAD')">Ajouter au panier</button>
             </div>
             <div class="carte-info">
               <p class="carte-nom">Bracelet Amazigh</p>
@@ -218,10 +223,10 @@
           </div>
 
           <!-- carte 8 -->
-          <div class="carte" onclick="ouvrirModal('picsUsed/tanbalt.jpg', 'Bracelet Amazigh Tanbalt', '4500 MAD', 'Tanbalt — bracelet berbère ancien, fabriqué en argent massif avec des motifs géométriques amazighs.', 'Argent Massif')">
+          <div class="carte" onclick="ouvrirModal('picsUsed/tanbalt.jpg', 'Bracelet Amazigh Tanbalt', '4 500 MAD', 'Tanbalt — bracelet berbère ancien, fabriqué en argent massif avec des motifs géométriques amazighs.', 'Argent Massif')">
             <div class="carte-img-wrapper">
               <img src="picsUsed/tanbalt.jpg" alt="Bracelet amazigh 2">
-              <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()" >Ajouter au panier</button>
+              <button class="carte-btn" onclick="event.stopPropagation(); ajouterAuPanier('picsUsed/tanbalt.jpg', 'Bracelet Amazigh Tanbalt', '4 500 MAD')">Ajouter au panier</button>
             </div>
             <div class="carte-info">
               <p class="carte-nom">Bracelet Amazigh Tanbalt</p>
@@ -230,10 +235,10 @@
           </div>
 
           <!-- carte 9 -->
-          <div class="carte" onclick="ouvrirModal('picsUsed/dblihamazigh.jpg', 'Bracelet Amazigh', '2500 MAD', 'Bracelet dblij amazigh, mélange unique entre le style dblij et les motifs berbères traditionnels.', 'Argent & Or')">
+          <div class="carte" onclick="ouvrirModal('picsUsed/dblihamazigh.jpg', 'Bracelet Amazigh Dblij', '2 500 MAD', 'Bracelet dblij amazigh, mélange unique entre le style dblij et les motifs berbères traditionnels.', 'Argent & Or')">
             <div class="carte-img-wrapper">
               <img src="picsUsed/dblihamazigh.jpg" alt="Bracelet amazigh 3">
-              <button class="carte-btn" onclick="event.stopPropagation(); afficherNotification()">Ajouter au panier</button>
+              <button class="carte-btn" onclick="event.stopPropagation(); ajouterAuPanier('picsUsed/dblihamazigh.jpg', 'Bracelet Amazigh Dblij', '2 500 MAD')">Ajouter au panier</button>
             </div>
             <div class="carte-info">
               <p class="carte-nom">Bracelet Amazigh</p>
@@ -248,19 +253,13 @@
 
   </main>
 
-  <!-- ============================================
-       FOOTER - pied de page avec 3 colonnes
-  ============================================ -->
+  <!-- FOOTER -->
   <footer>
     <div class="footer-principal">
-
-      <!-- colonne 1 : logo + description -->
       <div class="footer-col">
         <h3 class="footer-logo">Zina</h3>
         <p class="footer-desc">Bijoux marocains authentiques, fabriqués avec amour et tradition.</p>
       </div>
-
-      <!-- colonne 2 : liens rapides vers les pages -->
       <div class="footer-col">
         <h4 class="footer-titre-col">Liens Rapides</h4>
         <ul class="footer-liens">
@@ -271,8 +270,6 @@
           <li><a href="Rings&Earrings.html">Bagues & Boucles</a></li>
         </ul>
       </div>
-
-      <!-- colonne 3 : réseaux sociaux -->
       <div class="footer-col">
         <h4 class="footer-titre-col">Suivez-Nous</h4>
         <ul class="footer-liens">
@@ -281,32 +278,20 @@
           <li><a href="#">TikTok @Zina_jewelery2004</a></li>
         </ul>
       </div>
-
     </div>
-    <!-- ligne décorative dorée -->
     <div class="footer-ligne"></div>
     <div class="footer-copyright">
       <p>✦ © 2026 Zina — Tous droits réservés ✦</p>
     </div>
   </footer>
 
-  <!-- ============================================
-       MODAL - fenêtre popup détail produit
-       clique sur le fond = ferme le modal
-       clique sur la boite = ne ferme pas (stopPropagation)
-  ============================================ -->
+  <!-- MODAL PRODUIT -->
   <div class="modal-fond" id="modal" onclick="fermerModal()">
     <div class="modal-boite" onclick="event.stopPropagation()">
-
-      <!-- bouton fermer en haut à droite -->
       <button class="modal-fermer" onclick="fermerModal()">✕</button>
-
-      <!-- image du produit - src rempli par JavaScript -->
       <div class="modal-img-wrapper">
         <img id="modal-img" src="" alt="produit">
       </div>
-
-      <!-- infos du produit - contenu rempli par JavaScript -->
       <div class="modal-info">
         <h3 id="modal-nom"></h3>
         <div>
@@ -320,26 +305,111 @@
         </div>
         <p id="modal-desc"></p>
         <p id="modal-matiere"></p>
-        <!-- onclick appelle afficherNotification() -->
-        <button class="modal-btn" onclick="afficherNotification()">Ajouter au panier</button>
+        <!-- ajoute au panier depuis le modal -->
+        <button class="modal-btn" id="modal-btn-panier">Ajouter au panier</button>
       </div>
-
     </div>
   </div>
 
-  <!-- ============================================
-       BOUTON SCROLL TO TOP
-       apparaît quand on descend de 300px
-  ============================================ -->
+  <!-- TIROIR PANIER -->
+  <!-- fond sombre derrière le tiroir -->
+  <div class="panier-fond" id="panier-fond" onclick="fermerPanier()"></div>
+
+  <!-- tiroir qui glisse depuis la droite -->
+  <div class="panier-tiroir" id="panier-tiroir">
+
+    <!-- en-tête du tiroir -->
+    <div class="panier-header">
+      <h2 class="panier-titre">Mon Panier</h2>
+      <button class="panier-fermer" onclick="fermerPanier()">✕</button>
+    </div>
+
+    <!-- liste des articles - remplie par JavaScript -->
+    <div class="panier-liste" id="panier-liste">
+      <p class="panier-vide">Votre panier est vide.</p>
+    </div>
+
+    <!-- pied du tiroir : total + bouton commander -->
+    <div class="panier-footer">
+      <div class="panier-total-ligne">
+        <span>Total</span>
+        <span id="panier-total">0 MAD</span>
+      </div>
+      <button class="panier-commander" onclick="commander()">
+        Commander ✦
+      </button>
+    </div>
+
+  </div>
+
+  <!-- BOUTON SCROLL TO TOP -->
   <button class="scroll-top" id="scrollTop" onclick="allerEnHaut()">↑</button>
 
-  <!-- ============================================
-       NOTIFICATION AJOUT AU PANIER
-       apparaît quand on clique sur Ajouter au panier
-  ============================================ -->
+  <!-- NOTIFICATION -->
   <div class="notification" id="notification">
     <span>✦ Ajouté au panier avec succès ✦</span>
   </div>
+
+  <!-- JAVASCRIPT -->
   <script src="JSShared.js"></script>
+  <script>
+    /* ============================================
+       LOGIN MODAL
+    ============================================ */
+    const userIcon = document.getElementById("userIcon");
+    const loginModal = document.getElementById("loginModal");
+    const closeBtn = document.getElementById("closeBtn");
+
+    userIcon.addEventListener("click", function(e) {
+      e.preventDefault();
+      loginModal.style.display = "block";
+    });
+
+    closeBtn.addEventListener("click", function() {
+      loginModal.style.display = "none";
+    });
+
+    window.addEventListener("click", function(e) {
+      if (e.target == loginModal) {
+        loginModal.style.display = "none";
+      }
+    });
+
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Connexion réussie à la boutique Zina!");
+      loginModal.style.display = "none";
+    });
+
+    /* ============================================
+       MODAL PRODUIT - bouton ajouter au panier
+       on stocke les infos du produit actuel
+       pour les utiliser quand on clique
+    ============================================ */
+    let produitActuel = {};
+
+    function ouvrirModal(image, nom, prix, description, matiere) {
+      /* stocke les infos du produit actuel */
+      produitActuel = { image, nom, prix };
+
+      document.getElementById('modal-img').src = image;
+      document.getElementById('modal-nom').textContent = nom;
+      document.getElementById('modal-prix').textContent = prix;
+      document.getElementById('modal-desc').textContent = description;
+      document.getElementById('modal-matiere').textContent = 'Matière : ' + matiere;
+      document.getElementById('modal').classList.add('actif');
+    }
+
+    function fermerModal() {
+      document.getElementById('modal').classList.remove('actif');
+    }
+
+    /* bouton ajouter au panier dans le modal */
+    document.getElementById('modal-btn-panier').addEventListener('click', function() {
+      ajouterAuPanier(produitActuel.image, produitActuel.nom, produitActuel.prix);
+      fermerModal();
+    });
+  </script>
+
 </body>
 </html>
