@@ -1,0 +1,464 @@
+/* BARRE DE PROGRESSION */
+.pmt-progression {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 60px;
+  background-color: #F5F0E8;
+}
+
+.pmt-etape {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.pmt-etape-cercle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid #E8DDD0;
+  background-color: #FDFAF5;
+  color: #C4A882;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Amiri', serif;
+}
+
+.pmt-etape.active .pmt-etape-cercle {
+  background-color: #5C3D2E;
+  border-color: #5C3D2E;
+  color: #F5F0E8;
+}
+
+.pmt-etape.terminee .pmt-etape-cercle {
+  background-color: #C4A882;
+  border-color: #C4A882;
+  color: #F5F0E8;
+}
+
+.pmt-etape span {
+  font-size: 11px;
+  color: #C4A882;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.pmt-etape.active span {
+  color: #5C3D2E;
+  font-weight: bold;
+}
+
+.pmt-progression-ligne {
+  flex: 1;
+  max-width: 80px;
+  height: 1px;
+  background-color: #E8DDD0;
+  margin-bottom: 24px;
+}
+
+/* LAYOUT DEUX COLONNES */
+.pmt-main {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 30px;
+  padding: 40px 60px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* SECTION FORMULAIRE */
+.pmt-section {
+  background-color: #ffffff;
+  border: 1px solid #E8DDD0;
+  padding: 30px;
+}
+
+.pmt-section-titre {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #E8DDD0;
+}
+
+.pmt-section-titre h2 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 20px;
+  color: #5C3D2E;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+/* CHAMPS */
+.pmt-champ {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pmt-champ label {
+  font-size: 11px;
+  color: #C4A882;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.pmt-champ input,
+.pmt-champ select {
+  padding: 10px 14px;
+  border: 1px solid #E8DDD0;
+  background-color: #FDFAF5;
+  font-family: 'Amiri', serif;
+  font-size: 14px;
+  color: #5C3D2E;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.pmt-champ input:focus,
+.pmt-champ select:focus {
+  border-color: #C4A882;
+}
+
+.pmt-champ input::placeholder {
+  color: #C4A882;
+  opacity: 0.6;
+}
+
+.pmt-form-groupe.double {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* LIVRAISON */
+.pmt-livraison-titre {
+  font-size: 11px;
+  color: #C4A882;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  margin-top: 6px;
+}
+
+.pmt-livraison-options {
+  margin-bottom: 24px;
+}
+
+.pmt-livraison-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid #E8DDD0;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.pmt-livraison-option:hover,
+.pmt-livraison-option.selectionnee {
+  border-color: #5C3D2E;
+  background-color: #F5F0E8;
+}
+
+.pmt-livraison-option input[type="radio"] {
+  accent-color: #5C3D2E;
+}
+
+.pmt-livraison-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.pmt-livraison-nom {
+  font-size: 13px;
+  color: #5C3D2E;
+}
+
+.pmt-livraison-delai {
+  font-size: 11px;
+  color: #C4A882;
+  margin-top: 2px;
+}
+
+.pmt-livraison-prix {
+  font-size: 13px;
+  color: #5C3D2E;
+  font-weight: bold;
+}
+
+/* MÉTHODES PAIEMENT */
+.pmt-methode-options {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.pmt-methode-btn {
+  padding: 10px 16px;
+  border: 1px solid #E8DDD0;
+  background: none;
+  cursor: pointer;
+  font-family: 'Amiri', serif;
+  font-size: 13px;
+  color: #5C3D2E;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.pmt-methode-btn:hover {
+  border-color: #C4A882;
+}
+
+.pmt-methode-btn.active {
+  background-color: #5C3D2E;
+  color: #F5F0E8;
+  border-color: #5C3D2E;
+}
+
+/* VIREMENT */
+.pmt-virement-info {
+  background-color: #F5F0E8;
+  border: 1px solid #E8DDD0;
+  padding: 18px;
+  font-family: 'Amiri', serif;
+  font-size: 14px;
+  color: #5C3D2E;
+  line-height: 2;
+}
+
+.pmt-virement-note {
+  color: #C4A882;
+  font-style: italic;
+  margin-top: 6px;
+}
+
+/* BOUTONS */
+.pmt-btn-continuer {
+  width: 100%;
+  padding: 14px;
+  background-color: #5C3D2E;
+  color: #F5F0E8;
+  border: none;
+  font-family: 'Amiri', serif;
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pmt-btn-continuer:hover {
+  background-color: #C4A882;
+}
+
+.pmt-boutons-groupe {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.pmt-btn-retour {
+  padding: 14px 20px;
+  background: none;
+  border: 1px solid #E8DDD0;
+  font-family: 'Amiri', serif;
+  font-size: 13px;
+  color: #5C3D2E;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.pmt-btn-retour:hover {
+  border-color: #C4A882;
+  color: #C4A882;
+}
+
+.pmt-btn-commander {
+  flex: 1;
+  padding: 14px;
+  background-color: #5C3D2E;
+  color: #F5F0E8;
+  border: none;
+  font-family: 'Amiri', serif;
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pmt-btn-commander:hover {
+  background-color: #C4A882;
+}
+
+/* RÉCAPITULATIF */
+.pmt-droite {
+  background-color: #ffffff;
+  border: 1px solid #E8DDD0;
+  padding: 24px;
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+}
+
+.pmt-recap-titre {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #E8DDD0;
+}
+
+.pmt-recap-titre h3 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 18px;
+  color: #5C3D2E;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.pmt-recap-article {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #F5F0E8;
+}
+
+.pmt-recap-article img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border: 1px solid #E8DDD0;
+}
+
+.pmt-recap-article-nom {
+  font-family: 'Amiri', serif;
+  font-size: 13px;
+  color: #5C3D2E;
+  flex: 1;
+  line-height: 1.4;
+}
+
+.pmt-recap-article-prix {
+  font-size: 12px;
+  color: #C4A882;
+  white-space: nowrap;
+}
+
+.pmt-recap-totaux {
+  margin-top: 14px;
+  border-top: 1px solid #E8DDD0;
+  padding-top: 14px;
+}
+
+.pmt-recap-ligne {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #5C3D2E;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.pmt-recap-ligne.pmt-recap-total {
+  font-size: 16px;
+  font-weight: bold;
+  border-top: 1px solid #E8DDD0;
+  padding-top: 10px;
+  margin-top: 4px;
+}
+
+.pmt-recap-ligne.pmt-recap-total span:last-child {
+  color: #C4A882;
+}
+
+/* CONFIRMATION */
+.pmt-confirmation-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(92, 61, 46, 0.95);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pmt-confirmation-boite {
+  background-color: #FDFAF5;
+  padding: 50px;
+  text-align: center;
+  border: 1px solid #C4A882;
+  max-width: 440px;
+}
+
+.pmt-confirmation-icone {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #C4A882;
+  color: #F5F0E8;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.pmt-confirmation-boite h2 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 24px;
+  color: #5C3D2E;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.pmt-confirmation-boite p {
+  font-family: 'Amiri', serif;
+  font-size: 15px;
+  color: #8B6347;
+  line-height: 1.8;
+  margin-bottom: 8px;
+}
+
+.pmt-confirmation-numero {
+  font-size: 12px;
+  color: #C4A882;
+  letter-spacing: 3px;
+  margin: 14px 0 24px;
+}
+
+.pmt-btn-accueil {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #5C3D2E;
+  color: #F5F0E8;
+  text-decoration: none;
+  font-family: 'Amiri', serif;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.pmt-btn-accueil:hover {
+  background-color: #C4A882;
+}

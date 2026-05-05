@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zina - Paiement</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="paiement.css">
+</head>
+<body>
+
+<!-- HEADER identique à vos autres pages -->
+<header>
+  <div class="logo"><h1>Zina</h1></div>
+  <nav>
+    <ul>
+      <li><a href="home.html">Accueil</a></li>
+      <li><a href="bracelets.html">Bracelets</a></li>
+      <li><a href="sets.html">Collections</a></li>
+      <li><a href="mdamma.html">Mdamma & Chmar</a></li>
+      <li><a href="Rings&Earrings.html">Bagues & Boucles</a></li>
+    </ul>
+  </nav>
+  <div class="header-icones">
+    <button class="panier-icone" onclick="togglePanier()">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="1.5">
+        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 01-8 0"/>
+      </svg>
+      <span class="panier-badge" id="panier-badge" style="display:none">0</span>
+    </button>
+  </div>
+</header>
+
+<!-- BARRE DE PROGRESSION -->
+<div class="pmt-progression">
+  <div class="pmt-etape terminee">
+    <div class="pmt-etape-cercle">✓</div>
+    <span>Panier</span>
+  </div>
+  <div class="pmt-progression-ligne"></div>
+  <div class="pmt-etape active">
+    <div class="pmt-etape-cercle">2</div>
+    <span>Livraison</span>
+  </div>
+  <div class="pmt-progression-ligne"></div>
+  <div class="pmt-etape">
+    <div class="pmt-etape-cercle">3</div>
+    <span>Paiement</span>
+  </div>
+  <div class="pmt-progression-ligne"></div>
+  <div class="pmt-etape">
+    <div class="pmt-etape-cercle">4</div>
+    <span>Confirmation</span>
+  </div>
+</div>
+
+<main class="pmt-main">
+
+  <!-- COLONNE GAUCHE : formulaires -->
+  <div class="pmt-gauche">
+
+    <!-- ÉTAPE 1 : LIVRAISON -->
+    <div class="pmt-section" id="section-livraison">
+
+      <div class="pmt-section-titre">
+        <span class="titre-ornement">✦</span>
+        <h2>Informations de livraison</h2>
+      </div>
+
+      <div class="pmt-form-groupe double">
+        <div class="pmt-champ">
+          <label>Prénom</label>
+          <input type="text" id="prenom" placeholder="Votre prénom">
+        </div>
+        <div class="pmt-champ">
+          <label>Nom</label>
+          <input type="text" id="nom" placeholder="Votre nom">
+        </div>
+      </div>
+
+      <div class="pmt-champ">
+        <label>Téléphone</label>
+        <input type="tel" id="telephone" placeholder="+212 6XX XXX XXX">
+      </div>
+
+      <div class="pmt-champ">
+        <label>Adresse</label>
+        <input type="text" id="adresse" placeholder="Numéro et nom de rue">
+      </div>
+
+      <div class="pmt-champ">
+        <label>Ville</label>
+        <input type="text" id="ville" placeholder="Casablanca">
+      </div>
+
+      <!-- OPTIONS DE LIVRAISON -->
+      <p class="pmt-livraison-titre">Mode de livraison</p>
+
+      <div class="pmt-livraison-options">
+        <label class="pmt-livraison-option" onclick="choisirLivraison(this, 0)">
+          <input type="radio" name="livraison" checked>
+          <div class="pmt-livraison-info">
+            <span class="pmt-livraison-nom">Retrait en boutique</span>
+            <span class="pmt-livraison-delai">Casablanca — 24h</span>
+          </div>
+          <span class="pmt-livraison-prix">Gratuit</span>
+        </label>
+
+        <label class="pmt-livraison-option" onclick="choisirLivraison(this, 50)">
+          <input type="radio" name="livraison">
+          <div class="pmt-livraison-info">
+            <span class="pmt-livraison-nom">Livraison standard</span>
+            <span class="pmt-livraison-delai">3 à 5 jours ouvrés</span>
+          </div>
+          <span class="pmt-livraison-prix">50 MAD</span>
+        </label>
+
+        <label class="pmt-livraison-option" onclick="choisirLivraison(this, 120)">
+          <input type="radio" name="livraison">
+          <div class="pmt-livraison-info">
+            <span class="pmt-livraison-nom">Livraison express</span>
+            <span class="pmt-livraison-delai">24h — prioritaire</span>
+          </div>
+          <span class="pmt-livraison-prix">120 MAD</span>
+        </label>
+      </div>
+
+      <button class="pmt-btn-continuer" onclick="allerEtapePaiement()">
+        Continuer ✦
+      </button>
+    </div>
+
+    <!-- ÉTAPE 2 : PAIEMENT (cachée au début) -->
+    <div class="pmt-section" id="section-paiement" style="display:none">
+
+      <div class="pmt-section-titre">
+        <span class="titre-ornement">✦</span>
+        <h2>Méthode de paiement</h2>
+      </div>
+
+      <!-- 3 boutons de choix -->
+      <div class="pmt-methode-options">
+        <button class="pmt-methode-btn active"
+                onclick="choisirMethode(this, 'carte')">
+          Carte bancaire
+        </button>
+        <button class="pmt-methode-btn"
+                onclick="choisirMethode(this, 'virement')">
+          Virement
+        </button>
+        <button class="pmt-methode-btn"
+                onclick="choisirMethode(this, 'livraison')">
+          À la livraison
+        </button>
+      </div>
+
+      <!-- Formulaire carte -->
+      <div id="form-carte">
+        <div class="pmt-champ">
+          <label>Numéro de carte</label>
+          <input type="text" id="carte-numero" placeholder="1234 5678 9012 3456"
+                 maxlength="19" oninput="formaterCarte(this)">
+        </div>
+        <div class="pmt-champ">
+          <label>Nom sur la carte</label>
+          <input type="text" id="carte-nom" placeholder="PRÉNOM NOM">
+        </div>
+        <div class="pmt-form-groupe double">
+          <div class="pmt-champ">
+            <label>Expiration</label>
+            <input type="text" id="carte-expiration" placeholder="MM/AA"
+                   maxlength="5" oninput="formaterExpiration(this)">
+          </div>
+          <div class="pmt-champ">
+            <label>CVV</label>
+            <input type="text" id="carte-cvv" placeholder="123" maxlength="3">
+          </div>
+        </div>
+      </div>
+
+      <!-- Infos virement (caché par défaut) -->
+      <div id="form-virement" style="display:none">
+        <div class="pmt-virement-info">
+          <p><strong>RIB :</strong> 011 810 0000123456789012 26</p>
+          <p><strong>Banque :</strong> Attijariwafa Bank</p>
+          <p><strong>Bénéficiaire :</strong> Zina Bijoux SARL</p>
+          <p class="pmt-virement-note">
+            ✦ Commande traitée dès réception du virement
+          </p>
+        </div>
+      </div>
+
+      <!-- Paiement à la livraison (caché par défaut) -->
+      <div id="form-livraison-paiement" style="display:none">
+        <div class="pmt-virement-info">
+          <p>Vous paierez en espèces à la réception.</p>
+          <p class="pmt-virement-note">✦ Disponible uniquement au Maroc</p>
+        </div>
+      </div>
+
+      <div class="pmt-boutons-groupe">
+        <button class="pmt-btn-retour" onclick="retourLivraison()">
+          ← Retour
+        </button>
+        <button class="pmt-btn-commander" onclick="confirmerCommande()">
+          ✦ Confirmer
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- COLONNE DROITE : récapitulatif -->
+  <div class="pmt-droite">
+
+    <div class="pmt-recap-titre">
+      <span class="titre-ornement">✦</span>
+      <h3>Récapitulatif</h3>
+    </div>
+
+    <!-- articles chargés par JS -->
+    <div id="recap-articles"></div>
+
+    <div class="pmt-recap-totaux">
+      <div class="pmt-recap-ligne">
+        <span>Sous-total</span>
+        <span id="recap-sous-total">0 MAD</span>
+      </div>
+      <div class="pmt-recap-ligne">
+        <span>Livraison</span>
+        <span id="recap-livraison">Gratuit</span>
+      </div>
+      <div class="pmt-recap-ligne pmt-recap-total">
+        <span>Total</span>
+        <span id="recap-total-final">0 MAD</span>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- PAGE CONFIRMATION (cachée au début) -->
+<div class="pmt-confirmation-page" id="confirmation-page" style="display:none">
+  <div class="pmt-confirmation-boite">
+    <div class="pmt-confirmation-icone">✓</div>
+    <h2>Commande confirmée !</h2>
+    <p>Merci pour votre confiance.<br>Nous vous contacterons très bientôt.</p>
+    <p id="confirmation-numero" class="pmt-confirmation-numero"></p>
+    <a href="home.html" class="pmt-btn-accueil">Retour à l'accueil ✦</a>
+  </div>
+</div>
+
+<!-- JSShared.js EN PREMIER car paiement.js utilise panier[] -->
+<script src="JSShared.js"></script>
+<script src="paiement.js"></script>
+</body>
+</html>
