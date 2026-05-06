@@ -5,10 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zina - Sets</title>
 
-  
-  <!-- ============================================
-       GOOGLE FONTS
-  ============================================ -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Amiri&display=swap" rel="stylesheet">
 
   <!-- External CSS -->
@@ -24,29 +21,41 @@
 
   <nav>
     <ul>
-      <li><a href="home.html">Home</a></li>
+      <li><a href="home.html">Accueil</a></li>
       <li><a href="bracelets.html">Bracelets</a></li>
-      <li><a href="sets.html" class="active">Sets</a></li>
+      <li><a href="sets.html" class="active">Ensembles</a></li>
       <li><a href="mdamma.html">Mdamma & Chmar</a></li>
       <li><a href="Rings&Earrings.html">Bagues & Boucles</a></li>
     </ul>
   </nav>
+  <!-- ICÔNE PANIER dans le header -->
+  <div class="header-icones">
+    <button class="panier-icone" onclick="togglePanier()">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="1.5">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 01-8 0"/>
+        </svg>
+      <span class="panier-badge" id="panier-badge" style="display:none">0</span>
+    </button>
+  </div>
 </header>
 
-
+<main>
 
 <!-- HERO -->
 <section class="hero">
-  <img src="set_pic/header_d.jfif" alt="Set marocain 1">
-  <img src="set_pic/header_m.jfif" alt="Set marocain 2">
-  <img src="set_pic/header_g.jfif" alt="Set marocain 3">
+  <img src="set_pic/moroccan jewellery 🇲🇦 (6).jpg" alt="Set marocain 1">
+  <img src="set_pic/مخبل جزائري مع خيط الروح 🇩🇿 بلمسة عصرية (1).jfif" alt="Set marocain 2">
+  <img src="set_pic/set3.jfif" alt="Set marocain 3">
 </section>
 
 <!-- CITATION -->
 <div class="citation">
   <span class="citation-ligne">——</span>
   <span class="citation-ornement">✦</span>
-  <p class="citation-texte">"Where elegance meets Moroccan tradition"</p>
+  <p class="citation-texte">"Là où l'élégance rencontre la tradition marocaine"</p>
   <span class="citation-ornement">✦</span>
   <span class="citation-ligne">——</span>
 </div>
@@ -54,12 +63,12 @@
 <!-- BANDE -->
 <div class="bande">
   <div class="bande-contenu">
-    <span>✦ Handcrafted in Morocco</span>
-    <span>✦ Premium Quality Sets</span>
-    <span>✦ Timeless Elegance</span>
-    <span>✦ Handcrafted in Morocco</span>
-    <span>✦ Premium Quality Sets</span>
-    <span>✦ Timeless Elegance</span>
+    <span>✦ Fabriqué à la main au Maroc</span>
+    <span>✦ Sets de Qualité Premium</span>
+    <span>✦ Élégance Intemporelle</span>
+    <span>✦ Fabriqué à la main au Maroc</span>
+    <span>✦ Sets de Qualité Premium</span>
+    <span>✦ Élégance Intemporelle</span>
   </div>
 </div>
 
@@ -71,46 +80,78 @@
     <div class="categorie-titre">
       <span class="titre-ligne">——</span>
       <span class="titre-ornement">✦</span>
-      <h2>Luxury Sets</h2>
+      <h2>Ensembles Traditionnels</h2>
       <span class="titre-ornement">✦</span>
       <span class="titre-ligne">——</span>
     </div>
 
     <div class="grille">
 
-      <div class="carte">
+      <div class="carte" onclick="ouvrirModal('set_pic/moroccan jewellery 🇲🇦 (2).jfif','Un éclat royal','95 000 MAD','Une parure majestueuse qui incarne la noblesse de l\’artisanat marocain,pensée pour celles qui souhaitent briller lors des événements prestigieux.','Alliage doré, pierres décoratives, finition artisanale haut de gamme.')">
+        <div class="carte-img-wrapper">
+          <img src="set_pic/moroccan jewellery 🇲🇦 (2).jfif">
+          <button class="carte-btn" onclick="event.stopPropagation(); ajouterAuPanier('set_pic/moroccan jewellery 🇲🇦 (2).jfif','Un éclat royal','95 000 MAD')">AJOUTER AU PANIER</button>
+        </div>
+        <div class="carte-info">
+          <p class="carte-nom">Un éclat royal </p>
+          <p class="carte-prix">95 000 MAD</p>
+        </div>
+      </div>
+
+      <div class="carte" onclick="ouvrirModal('set_pic/moroccan jewellery 🇲🇦 (3).jfif','L\’apogée du luxe oriental','100 000 MAD','Ce set d\’une richesse inouïe réinterprète le savoir-faire ancestral avec une intensité précieuse, pour un moment inoubliable.','Alliage doré, pierres décoratives, finition artisanale haut de gamme.')">
+        <div class="carte-img-wrapper">
+          <img src="set_pic/moroccan jewellery 🇲🇦 (3).jfif">
+          <button class="carte-btn" onclick="event.stopPropagation(); ajouterAuPanier('set_pic/moroccan jewellery 🇲🇦 (3).jfif',' L\’apogée du luxe oriental','100 000 MAD')">AJOUTER AU PANIER</button>
+        </div>
+        <div class="carte-info">
+          <p class="carte-nom">L’apogée du luxe oriental</p>
+          <p class="carte-prix">100 000 MAD</p>
+        </div>
+      </div>
+      <div class="carte" onclick="ouvrirModal('set_pic/moroccan jewellery 🇲🇦 (6).jpg',' L/’élégance souveraine','80 000 MAD','Un ensemble somptueux qui capture l\'essence du luxe marocain, conçu pour les plus grandes occasions.','Alliage doré, pierres décoratives, finition artisanale haut de gamme.')">
+        <div class="carte-img-wrapper">
+          <img src="set_pic/moroccan jewellery 🇲🇦 (6).jpg">
+          <button class="carte-btn" onclick="event.stopPropagation(); ajouterAuPanier('set_pic/moroccan jewellery 🇲🇦 (6).jpg',' L’élégance souveraine','80 000 MAD')">AJOUTER AU PANIER</button>
+        </div>
+        <div class="carte-info">
+          <p class="carte-nom">L’élégance souveraine</p>
+          <p class="carte-prix">80 000 MAD</p>
+        </div>
+      </div>
+
+      <div class="carte" onclick="ouvrirModal('set_pic/download (7).jfif','Set de Luxe','46 000 MAD','Un ensemble somptueux qui capture l\'essence du luxe marocain, conçu pour les plus grandes occasions.','Alliage doré, pierres décoratives, finition artisanale haut de gamme.')">
         <div class="carte-img-wrapper">
           <img src="set_pic/download (7).jfif">
-          <button class="carte-btn">Add to Cart</button>
+          <button class="carte-btn" onclick="event.stopPropagation(); ajouterAuPanier('set_pic/download (7).jfif','Set de Luxe','46 000 MAD')">AJOUTER AU PANIER</button>
         </div>
         <div class="carte-info">
-          <p class="carte-nom">Luxury Set</p>
-          <p class="carte-prix">19000 MAD</p>
+          <p class="carte-nom">Set de Luxe</p>
+          <p class="carte-prix">46 000 MAD</p>
         </div>
       </div>
 
-      <div class="carte">
+      <div class="carte" onclick="ouvrirModal('set_pic/tradutionelle.jfif','Set Royal','55 000 MAD','Un set majestueux inspiré des trésors royaux marocains, symbole de prestige et de tradition.','Alliage doré, motifs traditionnels, finitions faites main.')">
         <div class="carte-img-wrapper">
           <img src="set_pic/tradutionelle.jfif">
-          <button class="carte-btn">Add to Cart</button>
+          <button class="carte-btn" onclick="event.stopPropagation(); ajouterAuPanier('set_pic/tradutionelle.jfif','Set Royal','55 000 MAD')">AJOUTER AU PANIER</button>
         </div>
         <div class="carte-info">
-          <p class="carte-nom">Royal Set</p>
-          <p class="carte-prix">15000 MAD</p>
+          <p class="carte-nom">Set Royal</p>
+          <p class="carte-prix">55 000 MAD</p>
         </div>
       </div>
 
-      <div class="carte">
+      <div class="carte" onclick="ouvrirModal('set_pic/tard.jfif','Set Doré','50 000 MAD','L\'éclat d\'un coucher de soleil marocain capturé dans un bijou. Un set doré d\'une beauté intemporelle.','Métal doré, finition polie, design exclusif.')">
         <div class="carte-img-wrapper">
           <img src="set_pic/tard.jfif">
-          <button class="carte-btn">Add to Cart</button>
+          <button class="carte-btn" onclick="event.stopPropagation(); ajouterAuPanier('set_pic/tard.jfif','Set Doré','50 000 MAD')">AJOUTER AU PANIER</button>
         </div>
         <div class="carte-info">
-          <p class="carte-nom">Golden Set</p>
-          <p class="carte-prix">10000 MAD</p>
+          <p class="carte-nom">Set Doré</p>
+          <p class="carte-prix">50 000 MAD</p>
         </div>
       </div>
-
+       
     </div>
   </div>
 
@@ -119,43 +160,43 @@
     <div class="categorie-titre">
       <span class="titre-ligne">——</span>
       <span class="titre-ornement">✦</span>
-      <h2>Traditional Sets</h2>
+      <h2>Ensembles de Luxe</h2>
       <span class="titre-ornement">✦</span>
       <span class="titre-ligne">——</span>
     </div>
 
     <div class="grille">
 
-      <div class="carte">
+      <div class="carte" onclick="ouvrirModal('set_pic/set1.jfif','Set Traditionnel','30 000 MAD','Un hommage à l\'artisanat marocain ancestral, où chaque détail raconte une histoire de famille et de passion.','Métal doré, filigrane traditionnel, pierres semi-précieuses.')">
         <div class="carte-img-wrapper">
           <img src="set_pic/set1.jfif">
-          <button class="carte-btn">Add to Cart</button>
+          <button class="carte-btn" onclick="event.stopPropagation(); ajouterAuPanier('set_pic/set1.jfif','Set Traditionnel','30 000 MAD')">AJOUTER AU PANIER</button>
         </div>
         <div class="carte-info">
-          <p class="carte-nom">Traditional Set</p>
-          <p class="carte-prix">15000 MAD</p>
+          <p class="carte-nom">Set Traditionnel</p>
+          <p class="carte-prix">30 000 MAD</p>
         </div>
       </div>
 
-      <div class="carte">
+      <div class="carte" onclick="ouvrirModal('set_pic/set2.jfif','Set Héritage','40 000 MAD','Portez un héritage. Ce set transmet l\'élégance et le savoir-faire de générations d\'artisans marocains.','Alliage doré, pierres vertes et rouges, finitions artisanales.')">
         <div class="carte-img-wrapper">
           <img src="set_pic/set2.jfif">
-          <button class="carte-btn">Add to Cart</button>
+          <button class="carte-btn" onclick="event.stopPropagation(); ajouterAuPanier('set_pic/set2.jfif','Set Héritage','40 000 MAD')">AJOUTER AU PANIER</button>
         </div>
         <div class="carte-info">
-          <p class="carte-nom">Heritage Set</p>
-          <p class="carte-prix">17000 MAD</p>
+          <p class="carte-nom">Set Héritage</p>
+          <p class="carte-prix">40 000 MAD</p>
         </div>
       </div>
 
-      <div class="carte">
+      <div class="carte" onclick="ouvrirModal('set_pic/set3.jfif','Set Classique','9 500 MAD','L\'essence même de la classe marocaine. Un set intemporel pour sublimer votre quotidien avec élégance.','Métal doré, design épuré, finition brillante.')">
         <div class="carte-img-wrapper">
           <img src="set_pic/set3.jfif">
-          <button class="carte-btn">Add to Cart</button>
+          <button class="carte-btn" onclick="event.stopPropagation(); ajouterAuPanier('set_pic/set3.jfif','Set Classique','9 500 MAD')">AJOUTER AU PANIER</button>
         </div>
         <div class="carte-info">
-          <p class="carte-nom">Classic Set</p>
-          <p class="carte-prix">4000 MAD</p>
+          <p class="carte-nom">Set Classique</p>
+          <p class="carte-prix">9 500 MAD</p>
         </div>
       </div>
 
@@ -167,43 +208,43 @@
     <div class="categorie-titre">
       <span class="titre-ligne">——</span>
       <span class="titre-ornement">✦</span>
-      <h2>Modern Sets</h2>
+      <h2>Ensembles Modernes</h2>
       <span class="titre-ornement">✦</span>
       <span class="titre-ligne">——</span>
     </div>
 
     <div class="grille">
 
-      <div class="carte">
+      <div class="carte" onclick="ouvrirModal('set_pic/download (22).jfif','Set Moderne','8 600 MAD','La tradition repensée pour la femme d\'aujourd\'hui. Un design épuré et contemporain pour un style unique.','Alliage doré/argenté, lignes contemporaines, finition mate et brillante.')">
         <div class="carte-img-wrapper">
-           <img src="set_pic/download (8).jfif">
-          <button class="carte-btn">Add to Cart</button>
+           <img src="set_pic/download (22).jfif">
+          <button class="carte-btn" onclick="event.stopPropagation(); ajouterAuPanier('set_pic/download (22).jfif','Set Moderne','8 600 MAD')">AJOUTER AU PANIER</button>
         </div>
         <div class="carte-info">
-          <p class="carte-nom">Modern Set</p>
-          <p class="carte-prix">6600 MAD</p>
+          <p class="carte-nom">Set Moderne</p>
+          <p class="carte-prix">8 600 MAD</p>
         </div>
       </div>
 
-      <div class="carte">
+      <div class="carte" onclick="ouvrirModal('set_pic/download (9).jfif','Set Élégant','8 900 MAD','Une élégance intemporelle réinterprétée avec modernité pour sublimer toutes vos tenues.','Alliage doré, design exclusif, finition artisanale.')">
         <div class="carte-img-wrapper">
           <img src="set_pic/download (9).jfif">
-          <button class="carte-btn">Add to Cart</button>
+          <button class="carte-btn" onclick="event.stopPropagation(); ajouterAuPanier('set_pic/download (9).jfif','Set Élégant','8 900 MAD')">AJOUTER AU PANIER</button>
         </div>
         <div class="carte-info">
-          <p class="carte-nom">Elegant Set</p>
-          <p class="carte-prix">5900 MAD</p>
+          <p class="carte-nom">Set Élégant</p>
+          <p class="carte-prix">8 900 MAD</p>
         </div>
       </div>
 
-      <div class="carte">
+      <div class="carte" onclick="ouvrirModal('set_pic/download (10).jfif','Set Premium','9 200 MAD','Un concentré de modernité et de qualité. Le set parfait pour accessoiriser un look contemporain.','Alliage haut de gamme, design minimaliste, finition parfaite.')">
         <div class="carte-img-wrapper">
            <img src="set_pic/download (10).jfif">
-          <button class="carte-btn">Add to Cart</button>
+          <button class="carte-btn" onclick="event.stopPropagation(); ajouterAuPanier('set_pic/download (10).jfif','Set Premium','9 200 MAD')">AJOUTER AU PANIER</button>
         </div>
         <div class="carte-info">
-          <p class="carte-nom">Premium Set</p>
-          <p class="carte-prix">4200 MAD</p>
+          <p class="carte-nom">Set Premium</p>
+          <p class="carte-prix">9 200 MAD</p>
         </div>
       </div>
 
@@ -212,30 +253,30 @@
 
 </section>
 
-<!-- FOOTER (same as your original) -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-principal">
 
     <div class="footer-col">
       <h3 class="footer-logo">Zina</h3>
       <p class="footer-desc">
-        Authentic Moroccan jewelry, handcrafted with love and tradition.
+        Bijoux marocains authentiques, fabriqués avec amour et tradition.
       </p>
     </div>
 
     <div class="footer-col">
-      <h4 class="footer-titre-col">Quick Links</h4>
+      <h4 class="footer-titre-col">LIENS RAPIDES</h4>
       <ul class="footer-liens">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="home.html">Accueil</a></li>
         <li><a href="bracelets.html">Bracelets</a></li>
-        <li><a href="sets.html">Sets</a></li>
+        <li><a href="sets.html">Ensembles</a></li>
         <li><a href="mdamma.html">Mdamma & Chmar</a></li>
-        <li><a href="rings.html">Rings & Earrings</a></li>
+        <li><a href="Rings&Earrings.html">Bagues & Boucles</a></li>
       </ul>
     </div>
 
     <div class="footer-col">
-      <h4 class="footer-titre-col">Follow Us</h4>
+      <h4 class="footer-titre-col">SUIVEZ-NOUS</h4>
       <ul class="footer-liens">
         <li><a href="#">Instagram @Zina_jewelery</a></li>
         <li><a href="#">Facebook @Zina_jewelery</a></li>
@@ -248,9 +289,80 @@
   <div class="footer-ligne"></div>
 
   <div class="footer-copyright">
-    <p>✦ © 2026 Zina — All rights reserved ✦</p>
+    <p>✦ © 2026 Zina — Tous droits réservés ✦</p>
   </div>
 </footer>
 
+<!-- ============================================
+       MODAL - fenêtre popup détail produit
+  ============================================ -->
+  <div class="modal-fond" id="modal" onclick="fermerModal()">
+    <div class="modal-boite" onclick="event.stopPropagation()">
+      <button class="modal-fermer" onclick="fermerModal()">✕</button>
+      <div class="modal-img-wrapper">
+        <img id="modal-img" src="" alt="produit">
+      </div>
+      <div class="modal-info">
+        <h3 id="modal-nom"></h3>
+        <div>
+          <p class="modal-label">Prix</p>
+          <p id="modal-prix"></p>
+        </div>
+        <div class="modal-about">
+          <span></span>
+          ✦ À propos de ce bijou ✦
+          <span></span>
+        </div>
+        <p id="modal-desc"></p>
+        <p id="modal-matiere"></p>
+        <button class="modal-btn" onclick="ajouterAuPanier(
+          document.getElementById('modal-img').src,
+          document.getElementById('modal-nom').textContent,
+          document.getElementById('modal-prix').textContent
+          )">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       BOUTON SCROLL TO TOP
+  ============================================ -->
+  <button class="scroll-top" id="scrollTop" onclick="allerEnHaut()">↑</button>
+
+  <!-- ============================================
+       NOTIFICATION AJOUT AU PANIER
+  ============================================ -->
+  <div class="notification" id="notification">
+    <span>✦ Ajouté au panier avec succès ✦</span>
+  </div>
+
+<!-- ============================================
+     FOND SEMI-TRANSPARENT DU TIROIR
+  ============================================ -->
+<div class="panier-fond" id="panier-fond" onclick="fermerPanier()"></div>
+
+<!-- ============================================
+     TIROIR PANIER
+  ============================================ -->
+<div class="panier-tiroir" id="panier-tiroir">
+  <div class="panier-header">
+    <h2 class="panier-titre">Mon Panier</h2>
+    <button class="panier-fermer" onclick="fermerPanier()">✕</button>
+  </div>
+  <div class="panier-liste" id="panier-liste">
+    <p class="panier-vide">Votre panier est vide.</p>
+  </div>
+  <div class="panier-footer">
+    <div class="panier-total-ligne">
+      <span>Total</span>
+      <span id="panier-total">0 MAD</span>
+    </div>
+    <button class="panier-commander" onclick="commander()">
+      Commander ✦
+    </button>
+  </div>
+</div>
+
+<script src="JSShared.js"></script>
 </body>
 </html>
