@@ -99,23 +99,6 @@ nav ul li a.active {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ============================================
    HERO ACCUEIL - 3 images côte à côte
    display:flex met les images en ligne
@@ -613,3 +596,63 @@ html{
 
 .scroll-top.visible { opacity: 1; }
 .scroll-top:hover { background-color: #C4A882; }
+
+/* about sign in */
+
+.modal {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(6px);
+}
+
+.modal-content {
+  background: #111;
+  color: white;
+  width: 300px;
+  margin: 12% auto;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(212,175,55,0.4);
+}
+
+.title {
+  color: #d4af37;
+  font-family: serif;
+}
+
+/* INPUT */
+.modal-content input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  background: #222;
+  color: white;
+}
+
+/* BUTTON */
+.btn {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(45deg, #d4af37, #b8962e);
+  border: none;
+  color: black;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.divider {
+  margin: 15px 0;
+  color: #aaa;
+}
+
+.close-btn {
+  float: right;
+  cursor: pointer;
+}
