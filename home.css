@@ -597,7 +597,7 @@ html{
 .scroll-top.visible { opacity: 1; }
 .scroll-top:hover { background-color: #C4A882; }
 
-<<<<<<< HEAD
+
 /* ============================================
    TIROIR PANIER
 ============================================ */
@@ -818,8 +818,8 @@ html{
   display: flex;
   align-items: center;
   justify-content: center;
-=======
-/* about sign in */
+
+/* about sign in */}
 
 .modal {
   display: none;
@@ -877,5 +877,5 @@ html{
 .close-btn {
   float: right;
   cursor: pointer;
->>>>>>> f4d15e4e7fe1fe3b2710e19d4567406aceeffeed
+
 }
