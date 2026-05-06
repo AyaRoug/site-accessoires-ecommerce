@@ -61,19 +61,68 @@
     </div>
   </header>
 
-
-
-
   <!-- Login Modal -->
-<div id="loginModal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.5); backdrop-filter:blur(5px);">
-  <div style="background-color:#fff; margin:10% auto; padding:30px; width:320px; border-radius:10px; text-align:center; position:relative; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-    <span id="closeBtn" style="position:absolute; right:15px; top:10px; font-size:24px; cursor:pointer;">&times;</span>
-    <h2 style="color:#4a3728; margin-bottom:20px;">Connexion</h2>
-    <form id="loginForm" style="display:flex; flex-direction:column; gap:15px;">
-      <input type="email" placeholder="Email" required style="padding:10px; border:1px solid #ddd; border-radius:5px;">
-      <input type="password" placeholder="Mot de passe" required style="padding:10px; border:1px solid #ddd; border-radius:5px;">
-      <button type="submit" style="background-color:#4a3728; color:white; padding:12px; border:none; border-radius:5px; cursor:pointer;">Se connecter</button>
+<!-- Login Modal - style Zina -->
+<div id="loginModal" style="display:none; position:fixed; z-index:2000; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.7);">
+  <div style="background-color:#FDFAF5; margin:8% auto; padding:50px 40px; width:420px; max-width:90%; position:relative; border:1px solid #C4A882; outline:4px solid #F5F0E8;">
+
+    <!-- bouton fermer -->
+    <span id="closeBtn" style="position:absolute; right:16px; top:12px; font-size:20px; cursor:pointer; color:#5C3D2E; font-family:'Amiri',serif;">&times;</span>
+
+    <!-- titre Zina -->
+    <div style="text-align:center; margin-bottom:24px;">
+      <h2 style="font-family:'Playfair Display',serif; font-style:italic; font-size:36px; color:#5C3D2E; letter-spacing:5px; margin:0 0 8px 0;">Zina</h2>
+      <p style="font-family:'Amiri',serif; font-size:13px; color:#C4A882; letter-spacing:2px; text-transform:uppercase; margin:0;">Connectez-vous à votre compte</p>
+    </div>
+
+    <!-- ligne décorative -->
+    <div style="display:flex; align-items:center; justify-content:center; gap:10px; color:#C4A882; margin-bottom:24px;">
+      <span style="letter-spacing:-2px;">——</span>
+      <span>✦</span>
+      <span style="letter-spacing:-2px;">——</span>
+    </div>
+
+    <!-- formulaire -->
+    <form id="loginForm" style="display:flex; flex-direction:column; gap:16px;">
+
+      <!-- email -->
+      <div style="display:flex; flex-direction:column; gap:6px;">
+        <label style="font-family:'Amiri',serif; font-size:12px; color:#5C3D2E; letter-spacing:2px; text-transform:uppercase;">Email</label>
+        <input type="email" placeholder="votre@email.com" required
+          style="padding:12px 16px; border:1px solid #C4A882; background-color:#F5F0E8; font-family:'Amiri',serif; font-size:14px; color:#5C3D2E; outline:none;">
+      </div>
+
+      <!-- mot de passe -->
+      <div style="display:flex; flex-direction:column; gap:6px;">
+        <label style="font-family:'Amiri',serif; font-size:12px; color:#5C3D2E; letter-spacing:2px; text-transform:uppercase;">Mot de passe</label>
+        <input type="password" placeholder="••••••••" required
+          style="padding:12px 16px; border:1px solid #C4A882; background-color:#F5F0E8; font-family:'Amiri',serif; font-size:14px; color:#5C3D2E; outline:none;">
+      </div>
+
+      <!-- mot de passe oublié -->
+      <a href="#" style="font-family:'Amiri',serif; font-size:12px; color:#C4A882; text-align:right; text-decoration:none; letter-spacing:1px;">Mot de passe oublié ?</a>
+
+      <!-- bouton connexion -->
+      <button type="submit"
+        style="padding:14px; background-color:#5C3D2E; color:#F5F0E8; border:none; font-family:'Amiri',serif; font-size:12px; letter-spacing:4px; text-transform:uppercase; cursor:pointer; margin-top:8px;">
+        ✦ Se connecter ✦
+      </button>
+
     </form>
+
+    <!-- séparateur -->
+    <div style="display:flex; align-items:center; gap:12px; margin:20px 0;">
+      <span style="flex:1; border-top:1px solid #C4A882;"></span>
+      <span style="font-family:'Amiri',serif; font-size:13px; color:#C4A882; letter-spacing:2px;">ou</span>
+      <span style="flex:1; border-top:1px solid #C4A882;"></span>
+    </div>
+
+    <!-- inscription -->
+    <p style="font-family:'Amiri',serif; font-size:13px; color:#8B6347; text-align:center; letter-spacing:1px;">
+      Pas encore de compte ?
+      <a href="#" style="color:#5C3D2E; text-decoration:none; border-bottom:1px solid #C4A882; padding-bottom:1px;">Créer un compte</a>
+    </p>
+
   </div>
 </div>
   <main>
