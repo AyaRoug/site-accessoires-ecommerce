@@ -613,3 +613,225 @@ html{
 
 .scroll-top.visible { opacity: 1; }
 .scroll-top:hover { background-color: #C4A882; }
+
+/* ============================================
+   TIROIR PANIER
+============================================ */
+
+/* fond sombre derrière le tiroir */
+.panier-fond {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1500;
+}
+
+.panier-fond.actif { display: block; }
+
+/* tiroir qui glisse depuis la droite */
+.panier-tiroir {
+  position: fixed;
+  top: 0;
+  right: -420px;          /* caché à droite par défaut */
+  width: 400px;
+  height: 100%;
+  background-color: #FDFAF5;
+  border-left: 1px solid #C4A882;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.4s ease; /* animation glissement */
+}
+
+.panier-tiroir.actif {
+  right: 0; /* visible quand actif */
+}
+
+/* en-tête du tiroir */
+.panier-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 24px;
+  border-bottom: 1px solid #E8DDD0;
+}
+
+.panier-titre {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 22px;
+  color: #5C3D2E;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.panier-fermer {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #5C3D2E;
+  cursor: pointer;
+}
+
+.panier-fermer:hover { color: #C4A882; }
+
+/* liste des articles */
+.panier-liste {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 24px;
+}
+
+/* message panier vide */
+.panier-vide {
+  font-family: 'Amiri', serif;
+  font-style: italic;
+  color: #C4A882;
+  text-align: center;
+  padding: 40px 0;
+  font-size: 15px;
+}
+
+/* chaque article dans le panier */
+.panier-article {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #F5F0E8;
+}
+
+.panier-article img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border: 1px solid #E8DDD0;
+}
+
+.panier-article-info {
+  flex: 1;
+}
+
+.panier-article-nom {
+  font-family: 'Amiri', serif;
+  font-size: 14px;
+  color: #5C3D2E;
+  margin: 0 0 4px 0;
+}
+
+.panier-article-prix {
+  font-size: 12px;
+  color: #C4A882;
+  margin: 0 0 8px 0;
+}
+
+/* contrôles quantité − 1 + */
+.panier-quantite {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.panier-quantite button {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #E8DDD0;
+  background: none;
+  color: #5C3D2E;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.panier-quantite button:hover {
+  background-color: #F5F0E8;
+}
+
+.panier-quantite span {
+  font-family: 'Amiri', serif;
+  font-size: 14px;
+  color: #5C3D2E;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* bouton supprimer article */
+.panier-supprimer {
+  background: none;
+  border: none;
+  color: #C4A882;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 4px;
+}
+
+.panier-supprimer:hover { color: #5C3D2E; }
+
+/* pied du tiroir */
+.panier-footer {
+  padding: 20px 24px;
+  border-top: 1px solid #E8DDD0;
+}
+
+.panier-total-ligne {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Amiri', serif;
+  font-size: 16px;
+  color: #5C3D2E;
+  margin-bottom: 16px;
+}
+
+.panier-total-ligne span:last-child {
+  color: #C4A882;
+  font-weight: bold;
+}
+
+/* bouton commander */
+.panier-commander {
+  width: 100%;
+  padding: 14px;
+  background-color: #5C3D2E;
+  color: #F5F0E8;
+  border: none;
+  font-family: 'Amiri', serif;
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.panier-commander:hover { background-color: #C4A882; }
+
+/* badge nombre d'articles */
+.panier-icone {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #5C3D2E;
+  display: flex;
+  align-items: center;
+}
+
+.panier-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 18px;
+  height: 18px;
+  background-color: #5C3D2E;
+  color: #F5F0E8;
+  border-radius: 50%;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
