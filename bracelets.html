@@ -352,64 +352,9 @@
 
   <!-- JAVASCRIPT -->
   <script src="JSShared.js"></script>
-  <script>
+  
     /* ============================================
-       LOGIN MODAL
-    ============================================ */
-    const userIcon = document.getElementById("userIcon");
-    const loginModal = document.getElementById("loginModal");
-    const closeBtn = document.getElementById("closeBtn");
-
-    userIcon.addEventListener("click", function(e) {
-      e.preventDefault();
-      loginModal.style.display = "block";
-    });
-
-    closeBtn.addEventListener("click", function() {
-      loginModal.style.display = "none";
-    });
-
-    window.addEventListener("click", function(e) {
-      if (e.target == loginModal) {
-        loginModal.style.display = "none";
-      }
-    });
-
-    document.getElementById("loginForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      alert("Connexion réussie à la boutique Zina!");
-      loginModal.style.display = "none";
-    });
-
-    /* ============================================
-       MODAL PRODUIT - bouton ajouter au panier
-       on stocke les infos du produit actuel
-       pour les utiliser quand on clique
-    ============================================ */
-    let produitActuel = {};
-
-    function ouvrirModal(image, nom, prix, description, matiere) {
-      /* stocke les infos du produit actuel */
-      produitActuel = { image, nom, prix };
-
-      document.getElementById('modal-img').src = image;
-      document.getElementById('modal-nom').textContent = nom;
-      document.getElementById('modal-prix').textContent = prix;
-      document.getElementById('modal-desc').textContent = description;
-      document.getElementById('modal-matiere').textContent = 'Matière : ' + matiere;
-      document.getElementById('modal').classList.add('actif');
-    }
-
-    function fermerModal() {
-      document.getElementById('modal').classList.remove('actif');
-    }
-
-    /* bouton ajouter au panier dans le modal */
-    document.getElementById('modal-btn-panier').addEventListener('click', function() {
-      ajouterAuPanier(produitActuel.image, produitActuel.nom, produitActuel.prix);
-      fermerModal();
-    });
-  </script>
+    
 
 </body>
 </html>
