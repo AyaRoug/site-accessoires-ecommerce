@@ -139,16 +139,28 @@ function confirmerCommande() {
   document.getElementById('confirmation-numero').textContent =
     'Numéro de commande : ' + numeroCommande;
 
+  // MISE À JOUR DE LA BARRE DE PROGRESSION
   const etapes = document.querySelectorAll('.pmt-etape');
   etapes[2].classList.remove('active');
   etapes[2].classList.add('terminee');
   etapes[2].querySelector('.pmt-etape-cercle').textContent = '✓';
   etapes[3].classList.add('active');
 
-  /* vide le panier après confirmation */
-  panier = [];
-  sauvegarderPanier();
-  mettreAJourAffichagePanier();
+  // ACTION CRUCIALE : Cacher le contenu principal et la barre pour laisser place à la confirmation
+  document.querySelector('.pmt-main').style.display = 'none';
+  document.querySelector('.pmt-progression').style.display = 'none';
 
-  document.getElementById('confirmation-page').style.display = 'flex';
+  // Afficher la page de confirmation
+  const confirmationPage = document.getElementById('confirmation-page');
+  confirmationPage.style.display = 'flex';
+
+  // Vider le panier
+  panier = [];
+  sauvegarderPanier(); 
+  if (typeof mettreAJourAffichagePanier === "function") {
+      mettreAJourAffichagePanier();
+  }
+
+  // Remonter en haut de page pour voir le message
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
