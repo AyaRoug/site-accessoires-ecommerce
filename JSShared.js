@@ -272,10 +272,16 @@ function sauvegarderPanier() {
 }
 
 function chargerPanier() {
-  const donnees = localStorage.getItem('zina-panier');
+ const donnees = localStorage.getItem('zina-panier');
   if (donnees) {
-    panier = JSON.parse(donnees);
-    mettreAJourAffichagePanier();
-  }
+     panier = JSON.parse(donnees);
+
+ // On vérifie si l'élément "panier-badge" existe sur la page actuelle
+  if (document.getElementById('panier-badge')) {
+     mettreAJourAffichagePanier();
+ }}
 }
-chargerPanier();
+/* Attendre que le HTML soit totalement chargé avant de remplir le panier */
+document.addEventListener('DOMContentLoaded', function() {
+  chargerPanier();
+});
